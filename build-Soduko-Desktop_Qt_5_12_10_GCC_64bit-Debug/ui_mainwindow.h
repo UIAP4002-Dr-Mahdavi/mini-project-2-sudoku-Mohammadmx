@@ -38,6 +38,10 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(800, 600);
+        MainWindow->setStyleSheet(QString::fromUtf8("MainWindow\n"
+"{\n"
+"background-color:qlineargradient(spread:pad, x1:0, y1:0.973, x2:0.915025, y2:0.097, stop:0.00497512 rgba(0, 0, 0, 255), stop:0.482587 rgba(61, 155, 235, 255), stop:0.895522 rgba(255, 102, 248, 255))\n"
+"}"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         btn_login = new QPushButton(centralwidget);
@@ -46,33 +50,40 @@ public:
         QFont font;
         font.setPointSize(12);
         btn_login->setFont(font);
+        btn_login->setStyleSheet(QString::fromUtf8("background-color:rgb(76, 22, 184)"));
         enter_name = new QLineEdit(centralwidget);
         enter_name->setObjectName(QString::fromUtf8("enter_name"));
         enter_name->setGeometry(QRect(380, 290, 241, 41));
+        QFont font1;
+        font1.setPointSize(16);
+        enter_name->setFont(font1);
+        enter_name->setStyleSheet(QString::fromUtf8("background-color:rgb(75, 206, 246)"));
         label_name = new QLabel(centralwidget);
         label_name->setObjectName(QString::fromUtf8("label_name"));
         label_name->setGeometry(QRect(130, 290, 211, 41));
-        QFont font1;
-        font1.setPointSize(16);
-        label_name->setFont(font1);
+        QFont font2;
+        font2.setPointSize(18);
+        label_name->setFont(font2);
         label_soduko = new QLabel(centralwidget);
         label_soduko->setObjectName(QString::fromUtf8("label_soduko"));
-        label_soduko->setGeometry(QRect(200, 60, 381, 111));
-        QFont font2;
-        font2.setPointSize(80);
-        font2.setBold(true);
-        font2.setItalic(true);
-        font2.setUnderline(false);
-        font2.setWeight(75);
-        font2.setStrikeOut(false);
-        font2.setKerning(true);
-        label_soduko->setFont(font2);
+        label_soduko->setGeometry(QRect(190, 60, 401, 111));
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("Serif"));
+        font3.setPointSize(70);
+        font3.setBold(true);
+        font3.setItalic(true);
+        font3.setUnderline(false);
+        font3.setWeight(75);
+        font3.setStrikeOut(false);
+        font3.setKerning(true);
+        label_soduko->setFont(font3);
         btn_leaderboard = new QPushButton(centralwidget);
         btn_leaderboard->setObjectName(QString::fromUtf8("btn_leaderboard"));
         btn_leaderboard->setGeometry(QRect(120, 460, 501, 51));
-        QFont font3;
-        font3.setPointSize(18);
-        btn_leaderboard->setFont(font3);
+        QFont font4;
+        font4.setPointSize(20);
+        btn_leaderboard->setFont(font4);
+        btn_leaderboard->setStyleSheet(QString::fromUtf8("background-color:qlineargradient(spread:pad, x1:0, y1:1, x2:0.915025, y2:0.097, stop:0 rgba(48, 48, 48, 255), stop:0.517413 rgba(61, 97, 235, 255), stop:0.895522 rgba(63, 195, 255, 255))"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));

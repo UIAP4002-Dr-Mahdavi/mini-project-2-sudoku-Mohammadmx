@@ -1,5 +1,6 @@
 #include "soduko.h"
 #include "ui_soduko.h"
+#include "endgame.h"
 #include <QMessageBox>
 #include <stdlib.h>
 #include <time.h>
@@ -738,6 +739,8 @@ void soduko::on_btn_solve_clicked()
 
 void soduko::on_btn_finish_clicked()
 {
+	endgame * egame = new endgame();
+	egame->show();
 	this->close();
 }
 

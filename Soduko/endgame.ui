@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>endgame</class>
+ <widget class="QWidget" name="endgame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>814</width>
+    <height>590</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>16</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="btn_playagain">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>40</y>
+     <width>241</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Play Again</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_leavegame">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>190</y>
+     <width>241</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Leave Game</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_leaderboard">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>340</y>
+     <width>241</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Leader Board</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

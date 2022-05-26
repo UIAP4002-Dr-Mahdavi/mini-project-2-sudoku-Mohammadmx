@@ -123,9 +123,9 @@ public:
         soduko->setEnabled(true);
         soduko->resize(829, 597);
         soduko->setAcceptDrops(false);
-        soduko->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+        soduko->setStyleSheet(QString::fromUtf8("soduko\n"
 "{\n"
-"background: rgb(243, 243, 243)\n"
+"background: rgb(46, 52, 54)\n"
 "}"));
         gridLayoutWidget_3 = new QWidget(soduko);
         gridLayoutWidget_3->setObjectName(QString::fromUtf8("gridLayoutWidget_3"));
@@ -784,11 +784,17 @@ public:
 
         btn_solve = new QPushButton(soduko);
         btn_solve->setObjectName(QString::fromUtf8("btn_solve"));
-        btn_solve->setGeometry(QRect(610, 530, 150, 50));
+        btn_solve->setGeometry(QRect(600, 509, 171, 71));
         btn_solve->setMaximumSize(QSize(500, 500));
+        QFont font1;
+        font1.setPointSize(18);
+        btn_solve->setFont(font1);
+        btn_solve->setStyleSheet(QString::fromUtf8("background-color: rgb(75, 206, 246);"));
         btn_finish = new QPushButton(soduko);
         btn_finish->setObjectName(QString::fromUtf8("btn_finish"));
-        btn_finish->setGeometry(QRect(610, 460, 150, 50));
+        btn_finish->setGeometry(QRect(600, 399, 171, 71));
+        btn_finish->setFont(font1);
+        btn_finish->setStyleSheet(QString::fromUtf8("background-color:rgb(239, 41, 41)"));
 
         retranslateUi(soduko);
 
@@ -803,7 +809,7 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Ubuntu'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
-        btn_solve->setText(QApplication::translate("soduko", "Solve", nullptr));
+        btn_solve->setText(QApplication::translate("soduko", "solve", nullptr));
         btn_finish->setText(QApplication::translate("soduko", "Finish", nullptr));
     } // retranslateUi
 

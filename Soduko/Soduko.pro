@@ -9,17 +9,20 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    endgame.cpp \
     leaderboard.cpp \
     main.cpp \
     mainwindow.cpp \
     soduko.cpp
 
 HEADERS += \
+    endgame.h \
     leaderboard.h \
     mainwindow.h \
     soduko.h
 
 FORMS += \
+    endgame.ui \
     leaderboard.ui \
     mainwindow.ui \
     soduko.ui

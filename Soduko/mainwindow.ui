@@ -13,6 +13,12 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">MainWindow
+{
+background-color:qlineargradient(spread:pad, x1:0, y1:0.973, x2:0.915025, y2:0.097, stop:0.00497512 rgba(0, 0, 0, 255), stop:0.482587 rgba(61, 155, 235, 255), stop:0.895522 rgba(255, 102, 248, 255))
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="btn_login">
     <property name="geometry">
@@ -28,6 +34,9 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(76, 22, 184)</string>
+    </property>
     <property name="text">
      <string>Start</string>
     </property>
@@ -40,6 +49,14 @@
       <width>241</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(75, 206, 246)</string>
     </property>
     <property name="text">
      <string/>
@@ -56,7 +73,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>16</pointsize>
+      <pointsize>18</pointsize>
      </font>
     </property>
     <property name="text">
@@ -66,15 +83,16 @@
    <widget class="QLabel" name="label_soduko">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>190</x>
       <y>60</y>
-      <width>381</width>
+      <width>401</width>
       <height>111</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>80</pointsize>
+      <family>Serif</family>
+      <pointsize>70</pointsize>
       <weight>75</weight>
       <italic>true</italic>
       <bold>true</bold>
@@ -98,8 +116,11 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
+      <pointsize>20</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:1, x2:0.915025, y2:0.097, stop:0 rgba(48, 48, 48, 255), stop:0.517413 rgba(61, 97, 235, 255), stop:0.895522 rgba(63, 195, 255, 255))</string>
     </property>
     <property name="text">
      <string>LeaderBoard</string>

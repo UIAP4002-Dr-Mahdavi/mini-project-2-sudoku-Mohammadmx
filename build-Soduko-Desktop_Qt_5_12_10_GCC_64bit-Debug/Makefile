@@ -52,16 +52,20 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../Soduko/leaderboard.cpp \
+SOURCES       = ../Soduko/endgame.cpp \
+		../Soduko/leaderboard.cpp \
 		../Soduko/main.cpp \
 		../Soduko/mainwindow.cpp \
-		../Soduko/soduko.cpp moc_leaderboard.cpp \
+		../Soduko/soduko.cpp moc_endgame.cpp \
+		moc_leaderboard.cpp \
 		moc_mainwindow.cpp \
 		moc_soduko.cpp
-OBJECTS       = leaderboard.o \
+OBJECTS       = endgame.o \
+		leaderboard.o \
 		main.o \
 		mainwindow.o \
 		soduko.o \
+		moc_endgame.o \
 		moc_leaderboard.o \
 		moc_mainwindow.o \
 		moc_soduko.o
@@ -259,9 +263,11 @@ DIST          = /home/mohmammad/Qt5.12.10/5.12.10/gcc_64/mkspecs/features/spec_p
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/mkspecs/features/exceptions.prf \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/mkspecs/features/yacc.prf \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/mkspecs/features/lex.prf \
-		../Soduko/Soduko.pro ../Soduko/leaderboard.h \
+		../Soduko/Soduko.pro ../Soduko/endgame.h \
+		../Soduko/leaderboard.h \
 		../Soduko/mainwindow.h \
-		../Soduko/soduko.h ../Soduko/leaderboard.cpp \
+		../Soduko/soduko.h ../Soduko/endgame.cpp \
+		../Soduko/leaderboard.cpp \
 		../Soduko/main.cpp \
 		../Soduko/mainwindow.cpp \
 		../Soduko/soduko.cpp
@@ -273,7 +279,7 @@ TARGET        = Soduko
 first: all
 ####### Build rules
 
-Soduko: ui_leaderboard.h ui_mainwindow.h ui_soduko.h $(OBJECTS)  
+Soduko: ui_endgame.h ui_leaderboard.h ui_mainwindow.h ui_soduko.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../Soduko/Soduko.pro /home/mohmammad/Qt5.12.10/5.12.10/gcc_64/mkspecs/linux-g++/qmake.conf /home/mohmammad/Qt5.12.10/5.12.10/gcc_64/mkspecs/features/spec_pre.prf \
@@ -682,9 +688,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/mohmammad/Qt5.12.10/5.12.10/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Soduko/leaderboard.h ../Soduko/mainwindow.h ../Soduko/soduko.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Soduko/leaderboard.cpp ../Soduko/main.cpp ../Soduko/mainwindow.cpp ../Soduko/soduko.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Soduko/leaderboard.ui ../Soduko/mainwindow.ui ../Soduko/soduko.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../Soduko/endgame.h ../Soduko/leaderboard.h ../Soduko/mainwindow.h ../Soduko/soduko.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Soduko/endgame.cpp ../Soduko/leaderboard.cpp ../Soduko/main.cpp ../Soduko/mainwindow.cpp ../Soduko/soduko.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Soduko/endgame.ui ../Soduko/leaderboard.ui ../Soduko/mainwindow.ui ../Soduko/soduko.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -716,9 +722,117 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /home/mohmammad/Qt5.12.10/5.12.10/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /home/mohmammad/Qt5.12.10/5.12.10/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_leaderboard.cpp moc_mainwindow.cpp moc_soduko.cpp
+compiler_moc_header_make_all: moc_endgame.cpp moc_leaderboard.cpp moc_mainwindow.cpp moc_soduko.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_leaderboard.cpp moc_mainwindow.cpp moc_soduko.cpp
+	-$(DEL_FILE) moc_endgame.cpp moc_leaderboard.cpp moc_mainwindow.cpp moc_soduko.cpp
+moc_endgame.cpp: ../Soduko/endgame.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QWidget \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qwidget.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qglobal.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qconfig.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qtcore-config.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qsysinfo.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qlogging.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qflags.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qatomic.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmutex.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qnumeric.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qversiontagging.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtgui-config.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qnamespace.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qobject.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstring.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qchar.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qbytearray.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qrefcount.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qarraydata.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstringliteral.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstringview.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qlist.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qalgorithms.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qiterator.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qpair.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstringlist.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qregexp.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qcoreevent.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmetatype.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qobject_impl.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmargins.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qrect.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qsize.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qpoint.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpalette.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qcolor.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qrgb.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qrgba64.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qbrush.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qvector.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qmatrix.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpolygon.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qregion.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qdatastream.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qiodevice.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qline.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtransform.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpainterpath.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qimage.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpixelformat.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpixmap.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qshareddata.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qhash.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qfont.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qfontinfo.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qcursor.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qkeysequence.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qevent.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qvariant.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmap.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qdebug.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qtextstream.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qlocale.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qset.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qurl.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qurlquery.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qfile.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qfiledevice.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qvector2d.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtouchdevice.h \
+		moc_predefs.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/bin/moc
+	/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/bin/moc $(DEFINES) --include '/home/mohmammad/Desktop/Term 2/MiniProject 2/mini-project-2-sudoku-Mohammadmx/build-Soduko-Desktop_Qt_5_12_10_GCC_64bit-Debug/moc_predefs.h' -I/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/mkspecs/linux-g++ -I'/home/mohmammad/Desktop/Term 2/MiniProject 2/mini-project-2-sudoku-Mohammadmx/Soduko' -I/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include -I/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets -I/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui -I/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Soduko/endgame.h -o moc_endgame.cpp
+
 moc_leaderboard.cpp: ../Soduko/leaderboard.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QWidget \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qwidget.h \
@@ -1050,9 +1164,13 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_leaderboard.h ui_mainwindow.h ui_soduko.h
+compiler_uic_make_all: ui_endgame.h ui_leaderboard.h ui_mainwindow.h ui_soduko.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_leaderboard.h ui_mainwindow.h ui_soduko.h
+	-$(DEL_FILE) ui_endgame.h ui_leaderboard.h ui_mainwindow.h ui_soduko.h
+ui_endgame.h: ../Soduko/endgame.ui \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/bin/uic
+	/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/bin/uic ../Soduko/endgame.ui -o ui_endgame.h
+
 ui_leaderboard.h: ../Soduko/leaderboard.ui \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/bin/uic
 	/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/bin/uic ../Soduko/leaderboard.ui -o ui_leaderboard.h
@@ -1074,6 +1192,113 @@ compiler_lex_clean:
 compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
+
+endgame.o: ../Soduko/endgame.cpp ../Soduko/endgame.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QWidget \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qwidget.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qglobal.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qconfig.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qtcore-config.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qsysinfo.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qlogging.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qflags.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qatomic.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qatomic_msvc.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmutex.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qnumeric.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qversiontagging.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtgui-config.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qnamespace.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qobject.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstring.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qchar.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qbytearray.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qrefcount.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qarraydata.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstringliteral.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstringview.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qlist.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qalgorithms.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qiterator.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qpair.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstringlist.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qregexp.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qcoreevent.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmetatype.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qobject_impl.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmargins.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qrect.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qsize.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qpoint.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpalette.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qcolor.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qrgb.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qrgba64.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qbrush.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qvector.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qmatrix.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpolygon.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qregion.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qdatastream.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qiodevice.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qline.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtransform.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpainterpath.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qimage.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpixelformat.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpixmap.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qshareddata.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qhash.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qfont.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qfontinfo.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qcursor.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qkeysequence.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qevent.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qvariant.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qmap.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qdebug.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qtextstream.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qlocale.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qset.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qurl.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qurlquery.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qfile.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qfiledevice.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qvector2d.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtouchdevice.h \
+		ui_endgame.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o endgame.o ../Soduko/endgame.cpp
 
 leaderboard.o: ../Soduko/leaderboard.cpp ../Soduko/leaderboard.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QWidget \
@@ -1179,7 +1404,15 @@ leaderboard.o: ../Soduko/leaderboard.cpp ../Soduko/leaderboard.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qfiledevice.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qvector2d.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtouchdevice.h \
-		ui_leaderboard.h
+		ui_leaderboard.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QVariant \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QApplication \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qapplication.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qeventloop.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qguiapplication.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qinputmethod.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o leaderboard.o ../Soduko/leaderboard.cpp
 
 main.o: ../Soduko/main.cpp ../Soduko/mainwindow.h \
@@ -1572,10 +1805,14 @@ soduko.o: ../Soduko/soduko.cpp ../Soduko/soduko.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtextcursor.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtextformat.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpen.h \
+		../Soduko/endgame.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QMessageBox \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qmessagebox.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o soduko.o ../Soduko/soduko.cpp
+
+moc_endgame.o: moc_endgame.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_endgame.o moc_endgame.cpp
 
 moc_leaderboard.o: moc_leaderboard.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_leaderboard.o moc_leaderboard.cpp

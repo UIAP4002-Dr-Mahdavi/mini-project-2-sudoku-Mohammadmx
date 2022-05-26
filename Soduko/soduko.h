@@ -15,6 +15,10 @@ public:
 	explicit soduko(QWidget *parent = nullptr);
 	~soduko();
 
+private slots:
+
+	void on_inp1_1_textChanged();
+
 private:
 	Ui::soduko *ui;
 };

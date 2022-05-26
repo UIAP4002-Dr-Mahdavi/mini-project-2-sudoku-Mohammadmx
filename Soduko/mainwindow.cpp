@@ -26,7 +26,7 @@ void MainWindow::on_btn_login_clicked()
 		mbox.setWindowTitle("Warning!");
 		mbox.setIcon(QMessageBox::Warning);
 		mbox.setStandardButtons(QMessageBox::Ok);
-		mbox.resize(50,30);
+		mbox.resize(1000,60);
 		mbox.exec();
 	}
 	else

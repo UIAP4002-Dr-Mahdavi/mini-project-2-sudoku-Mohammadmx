@@ -22,16 +22,56 @@ class Ui_soduko
 public:
     QWidget *gridLayoutWidget_3;
     QGridLayout *box;
+    QGridLayout *box5;
+    QTextEdit *inp5_6;
+    QTextEdit *inp5_4;
+    QTextEdit *inp5_8;
+    QTextEdit *inp5_2;
+    QTextEdit *inp5_7;
+    QTextEdit *inp5_5;
+    QTextEdit *inp5_3;
+    QTextEdit *inp5_1;
+    QTextEdit *inp5_9;
     QGridLayout *box1;
-    QTextEdit *inp1_6;
-    QTextEdit *inp1_1;
-    QTextEdit *inp1_2;
-    QTextEdit *inp1_3;
-    QTextEdit *inp1_4;
-    QTextEdit *inp1_5;
-    QTextEdit *inp1_7;
-    QTextEdit *inp1_8;
     QTextEdit *inp1_9;
+    QTextEdit *inp1_2;
+    QTextEdit *inp1_4;
+    QTextEdit *inp1_6;
+    QTextEdit *inp1_8;
+    QTextEdit *inp1_7;
+    QTextEdit *inp1_3;
+    QTextEdit *inp1_1;
+    QTextEdit *inp1_5;
+    QGridLayout *box7;
+    QTextEdit *inp7_4;
+    QTextEdit *inp7_1;
+    QTextEdit *inp7_3;
+    QTextEdit *inp7_7;
+    QTextEdit *inp7_6;
+    QTextEdit *inp7_9;
+    QTextEdit *inp7_8;
+    QTextEdit *inp7_2;
+    QTextEdit *inp7_5;
+    QGridLayout *box9;
+    QTextEdit *inp9_4;
+    QTextEdit *inp9_1;
+    QTextEdit *inp9_3;
+    QTextEdit *inp9_7;
+    QTextEdit *inp9_6;
+    QTextEdit *inp9_9;
+    QTextEdit *inp9_8;
+    QTextEdit *inp9_2;
+    QTextEdit *inp9_5;
+    QGridLayout *box6;
+    QTextEdit *inp6_4;
+    QTextEdit *inp6_3;
+    QTextEdit *inp6_6;
+    QTextEdit *inp6_2;
+    QTextEdit *inp6_9;
+    QTextEdit *inp6_1;
+    QTextEdit *inp6_7;
+    QTextEdit *inp6_8;
+    QTextEdit *inp6_5;
     QGridLayout *box2;
     QTextEdit *inp2_4;
     QTextEdit *inp2_1;
@@ -62,36 +102,6 @@ public:
     QTextEdit *inp4_1;
     QTextEdit *inp4_7;
     QTextEdit *inp4_8;
-    QGridLayout *box5;
-    QTextEdit *inp5_6;
-    QTextEdit *inp5_4;
-    QTextEdit *inp5_8;
-    QTextEdit *inp5_2;
-    QTextEdit *inp5_7;
-    QTextEdit *inp5_5;
-    QTextEdit *inp5_3;
-    QTextEdit *inp5_1;
-    QTextEdit *inp5_9;
-    QGridLayout *box6;
-    QTextEdit *inp6_4;
-    QTextEdit *inp6_3;
-    QTextEdit *inp6_6;
-    QTextEdit *inp6_2;
-    QTextEdit *inp6_9;
-    QTextEdit *inp6_1;
-    QTextEdit *inp6_7;
-    QTextEdit *inp6_8;
-    QTextEdit *inp6_5;
-    QGridLayout *box9;
-    QTextEdit *inp9_4;
-    QTextEdit *inp9_1;
-    QTextEdit *inp9_3;
-    QTextEdit *inp9_7;
-    QTextEdit *inp9_6;
-    QTextEdit *inp9_9;
-    QTextEdit *inp9_8;
-    QTextEdit *inp9_2;
-    QTextEdit *inp9_5;
     QGridLayout *box8;
     QTextEdit *inp8_4;
     QTextEdit *inp8_1;
@@ -102,47 +112,98 @@ public:
     QTextEdit *inp8_8;
     QTextEdit *inp8_2;
     QTextEdit *inp8_5;
-    QGridLayout *box7;
-    QTextEdit *inp7_4;
-    QTextEdit *inp7_1;
-    QTextEdit *inp7_3;
-    QTextEdit *inp7_7;
-    QTextEdit *inp7_6;
-    QTextEdit *inp7_9;
-    QTextEdit *inp7_8;
-    QTextEdit *inp7_2;
-    QTextEdit *inp7_5;
 
     void setupUi(QWidget *soduko)
     {
         if (soduko->objectName().isEmpty())
             soduko->setObjectName(QString::fromUtf8("soduko"));
-        soduko->resize(829, 596);
+        soduko->resize(829, 597);
+        soduko->setStyleSheet(QString::fromUtf8("QTextEdit\n"
+"{\n"
+"background: rgb(243, 243, 243)\n"
+"}"));
         gridLayoutWidget_3 = new QWidget(soduko);
         gridLayoutWidget_3->setObjectName(QString::fromUtf8("gridLayoutWidget_3"));
-        gridLayoutWidget_3->setGeometry(QRect(10, 60, 601, 521));
+        gridLayoutWidget_3->setGeometry(QRect(20, 60, 511, 511));
         QFont font;
         font.setPointSize(20);
         gridLayoutWidget_3->setFont(font);
         box = new QGridLayout(gridLayoutWidget_3);
         box->setObjectName(QString::fromUtf8("box"));
+        box->setSizeConstraint(QLayout::SetDefaultConstraint);
         box->setContentsMargins(0, 0, 0, 0);
+        box5 = new QGridLayout();
+        box5->setSpacing(2);
+        box5->setObjectName(QString::fromUtf8("box5"));
+        box5->setSizeConstraint(QLayout::SetDefaultConstraint);
+        box5->setContentsMargins(0, 0, -1, -1);
+        inp5_6 = new QTextEdit(gridLayoutWidget_3);
+        inp5_6->setObjectName(QString::fromUtf8("inp5_6"));
+        inp5_6->setFont(font);
+
+        box5->addWidget(inp5_6, 2, 2, 1, 1);
+
+        inp5_4 = new QTextEdit(gridLayoutWidget_3);
+        inp5_4->setObjectName(QString::fromUtf8("inp5_4"));
+        inp5_4->setFont(font);
+
+        box5->addWidget(inp5_4, 2, 0, 1, 1);
+
+        inp5_8 = new QTextEdit(gridLayoutWidget_3);
+        inp5_8->setObjectName(QString::fromUtf8("inp5_8"));
+        inp5_8->setFont(font);
+
+        box5->addWidget(inp5_8, 3, 1, 1, 1);
+
+        inp5_2 = new QTextEdit(gridLayoutWidget_3);
+        inp5_2->setObjectName(QString::fromUtf8("inp5_2"));
+        inp5_2->setFont(font);
+
+        box5->addWidget(inp5_2, 0, 1, 1, 1);
+
+        inp5_7 = new QTextEdit(gridLayoutWidget_3);
+        inp5_7->setObjectName(QString::fromUtf8("inp5_7"));
+        inp5_7->setFont(font);
+
+        box5->addWidget(inp5_7, 3, 0, 1, 1);
+
+        inp5_5 = new QTextEdit(gridLayoutWidget_3);
+        inp5_5->setObjectName(QString::fromUtf8("inp5_5"));
+        inp5_5->setFont(font);
+
+        box5->addWidget(inp5_5, 2, 1, 1, 1);
+
+        inp5_3 = new QTextEdit(gridLayoutWidget_3);
+        inp5_3->setObjectName(QString::fromUtf8("inp5_3"));
+        inp5_3->setFont(font);
+
+        box5->addWidget(inp5_3, 0, 2, 1, 1);
+
+        inp5_1 = new QTextEdit(gridLayoutWidget_3);
+        inp5_1->setObjectName(QString::fromUtf8("inp5_1"));
+        inp5_1->setFont(font);
+
+        box5->addWidget(inp5_1, 0, 0, 1, 1);
+
+        inp5_9 = new QTextEdit(gridLayoutWidget_3);
+        inp5_9->setObjectName(QString::fromUtf8("inp5_9"));
+        inp5_9->setFont(font);
+
+        box5->addWidget(inp5_9, 3, 2, 1, 1);
+
+
+        box->addLayout(box5, 1, 1, 1, 1);
+
         box1 = new QGridLayout();
         box1->setSpacing(2);
         box1->setObjectName(QString::fromUtf8("box1"));
         box1->setSizeConstraint(QLayout::SetDefaultConstraint);
         box1->setContentsMargins(0, 0, -1, -1);
-        inp1_6 = new QTextEdit(gridLayoutWidget_3);
-        inp1_6->setObjectName(QString::fromUtf8("inp1_6"));
-        inp1_6->setFont(font);
+        inp1_9 = new QTextEdit(gridLayoutWidget_3);
+        inp1_9->setObjectName(QString::fromUtf8("inp1_9"));
+        inp1_9->setFont(font);
 
-        box1->addWidget(inp1_6, 2, 2, 1, 1);
-
-        inp1_1 = new QTextEdit(gridLayoutWidget_3);
-        inp1_1->setObjectName(QString::fromUtf8("inp1_1"));
-        inp1_1->setFont(font);
-
-        box1->addWidget(inp1_1, 0, 0, 1, 1);
+        box1->addWidget(inp1_9, 3, 2, 1, 1);
 
         inp1_2 = new QTextEdit(gridLayoutWidget_3);
         inp1_2->setObjectName(QString::fromUtf8("inp1_2"));
@@ -150,29 +211,17 @@ public:
 
         box1->addWidget(inp1_2, 0, 1, 1, 1);
 
-        inp1_3 = new QTextEdit(gridLayoutWidget_3);
-        inp1_3->setObjectName(QString::fromUtf8("inp1_3"));
-        inp1_3->setFont(font);
-
-        box1->addWidget(inp1_3, 0, 2, 1, 1);
-
         inp1_4 = new QTextEdit(gridLayoutWidget_3);
         inp1_4->setObjectName(QString::fromUtf8("inp1_4"));
         inp1_4->setFont(font);
 
         box1->addWidget(inp1_4, 2, 0, 1, 1);
 
-        inp1_5 = new QTextEdit(gridLayoutWidget_3);
-        inp1_5->setObjectName(QString::fromUtf8("inp1_5"));
-        inp1_5->setFont(font);
+        inp1_6 = new QTextEdit(gridLayoutWidget_3);
+        inp1_6->setObjectName(QString::fromUtf8("inp1_6"));
+        inp1_6->setFont(font);
 
-        box1->addWidget(inp1_5, 2, 1, 1, 1);
-
-        inp1_7 = new QTextEdit(gridLayoutWidget_3);
-        inp1_7->setObjectName(QString::fromUtf8("inp1_7"));
-        inp1_7->setFont(font);
-
-        box1->addWidget(inp1_7, 3, 0, 1, 1);
+        box1->addWidget(inp1_6, 2, 2, 1, 1);
 
         inp1_8 = new QTextEdit(gridLayoutWidget_3);
         inp1_8->setObjectName(QString::fromUtf8("inp1_8"));
@@ -180,14 +229,223 @@ public:
 
         box1->addWidget(inp1_8, 3, 1, 1, 1);
 
-        inp1_9 = new QTextEdit(gridLayoutWidget_3);
-        inp1_9->setObjectName(QString::fromUtf8("inp1_9"));
-        inp1_9->setFont(font);
+        inp1_7 = new QTextEdit(gridLayoutWidget_3);
+        inp1_7->setObjectName(QString::fromUtf8("inp1_7"));
+        inp1_7->setFont(font);
 
-        box1->addWidget(inp1_9, 3, 2, 1, 1);
+        box1->addWidget(inp1_7, 3, 0, 1, 1);
+
+        inp1_3 = new QTextEdit(gridLayoutWidget_3);
+        inp1_3->setObjectName(QString::fromUtf8("inp1_3"));
+        inp1_3->setFont(font);
+
+        box1->addWidget(inp1_3, 0, 2, 1, 1);
+
+        inp1_1 = new QTextEdit(gridLayoutWidget_3);
+        inp1_1->setObjectName(QString::fromUtf8("inp1_1"));
+        inp1_1->setFont(font);
+        inp1_1->setLayoutDirection(Qt::LeftToRight);
+        inp1_1->setStyleSheet(QString::fromUtf8("Background Color : rgb(173, 127, 168)\n"
+"\n"
+"\n"
+""));
+
+        box1->addWidget(inp1_1, 0, 0, 1, 1);
+
+        inp1_5 = new QTextEdit(gridLayoutWidget_3);
+        inp1_5->setObjectName(QString::fromUtf8("inp1_5"));
+        inp1_5->setFont(font);
+
+        box1->addWidget(inp1_5, 2, 1, 1, 1);
 
 
         box->addLayout(box1, 0, 0, 1, 1);
+
+        box7 = new QGridLayout();
+        box7->setSpacing(2);
+        box7->setObjectName(QString::fromUtf8("box7"));
+        box7->setSizeConstraint(QLayout::SetDefaultConstraint);
+        box7->setContentsMargins(0, 0, -1, -1);
+        inp7_4 = new QTextEdit(gridLayoutWidget_3);
+        inp7_4->setObjectName(QString::fromUtf8("inp7_4"));
+        inp7_4->setFont(font);
+
+        box7->addWidget(inp7_4, 2, 0, 1, 1);
+
+        inp7_1 = new QTextEdit(gridLayoutWidget_3);
+        inp7_1->setObjectName(QString::fromUtf8("inp7_1"));
+        inp7_1->setFont(font);
+
+        box7->addWidget(inp7_1, 0, 0, 1, 1);
+
+        inp7_3 = new QTextEdit(gridLayoutWidget_3);
+        inp7_3->setObjectName(QString::fromUtf8("inp7_3"));
+        inp7_3->setFont(font);
+
+        box7->addWidget(inp7_3, 0, 2, 1, 1);
+
+        inp7_7 = new QTextEdit(gridLayoutWidget_3);
+        inp7_7->setObjectName(QString::fromUtf8("inp7_7"));
+        inp7_7->setFont(font);
+
+        box7->addWidget(inp7_7, 3, 0, 1, 1);
+
+        inp7_6 = new QTextEdit(gridLayoutWidget_3);
+        inp7_6->setObjectName(QString::fromUtf8("inp7_6"));
+        inp7_6->setFont(font);
+
+        box7->addWidget(inp7_6, 2, 2, 1, 1);
+
+        inp7_9 = new QTextEdit(gridLayoutWidget_3);
+        inp7_9->setObjectName(QString::fromUtf8("inp7_9"));
+        inp7_9->setFont(font);
+
+        box7->addWidget(inp7_9, 3, 2, 1, 1);
+
+        inp7_8 = new QTextEdit(gridLayoutWidget_3);
+        inp7_8->setObjectName(QString::fromUtf8("inp7_8"));
+        inp7_8->setFont(font);
+
+        box7->addWidget(inp7_8, 3, 1, 1, 1);
+
+        inp7_2 = new QTextEdit(gridLayoutWidget_3);
+        inp7_2->setObjectName(QString::fromUtf8("inp7_2"));
+        inp7_2->setFont(font);
+
+        box7->addWidget(inp7_2, 0, 1, 1, 1);
+
+        inp7_5 = new QTextEdit(gridLayoutWidget_3);
+        inp7_5->setObjectName(QString::fromUtf8("inp7_5"));
+        inp7_5->setFont(font);
+
+        box7->addWidget(inp7_5, 2, 1, 1, 1);
+
+
+        box->addLayout(box7, 2, 0, 1, 1);
+
+        box9 = new QGridLayout();
+        box9->setSpacing(2);
+        box9->setObjectName(QString::fromUtf8("box9"));
+        box9->setSizeConstraint(QLayout::SetDefaultConstraint);
+        box9->setContentsMargins(0, 0, -1, -1);
+        inp9_4 = new QTextEdit(gridLayoutWidget_3);
+        inp9_4->setObjectName(QString::fromUtf8("inp9_4"));
+        inp9_4->setFont(font);
+
+        box9->addWidget(inp9_4, 2, 0, 1, 1);
+
+        inp9_1 = new QTextEdit(gridLayoutWidget_3);
+        inp9_1->setObjectName(QString::fromUtf8("inp9_1"));
+        inp9_1->setFont(font);
+
+        box9->addWidget(inp9_1, 0, 0, 1, 1);
+
+        inp9_3 = new QTextEdit(gridLayoutWidget_3);
+        inp9_3->setObjectName(QString::fromUtf8("inp9_3"));
+        inp9_3->setFont(font);
+
+        box9->addWidget(inp9_3, 0, 2, 1, 1);
+
+        inp9_7 = new QTextEdit(gridLayoutWidget_3);
+        inp9_7->setObjectName(QString::fromUtf8("inp9_7"));
+        inp9_7->setFont(font);
+
+        box9->addWidget(inp9_7, 3, 0, 1, 1);
+
+        inp9_6 = new QTextEdit(gridLayoutWidget_3);
+        inp9_6->setObjectName(QString::fromUtf8("inp9_6"));
+        inp9_6->setFont(font);
+
+        box9->addWidget(inp9_6, 2, 2, 1, 1);
+
+        inp9_9 = new QTextEdit(gridLayoutWidget_3);
+        inp9_9->setObjectName(QString::fromUtf8("inp9_9"));
+        inp9_9->setFont(font);
+
+        box9->addWidget(inp9_9, 3, 2, 1, 1);
+
+        inp9_8 = new QTextEdit(gridLayoutWidget_3);
+        inp9_8->setObjectName(QString::fromUtf8("inp9_8"));
+        inp9_8->setFont(font);
+
+        box9->addWidget(inp9_8, 3, 1, 1, 1);
+
+        inp9_2 = new QTextEdit(gridLayoutWidget_3);
+        inp9_2->setObjectName(QString::fromUtf8("inp9_2"));
+        inp9_2->setFont(font);
+
+        box9->addWidget(inp9_2, 0, 1, 1, 1);
+
+        inp9_5 = new QTextEdit(gridLayoutWidget_3);
+        inp9_5->setObjectName(QString::fromUtf8("inp9_5"));
+        inp9_5->setFont(font);
+
+        box9->addWidget(inp9_5, 2, 1, 1, 1);
+
+
+        box->addLayout(box9, 2, 2, 1, 1);
+
+        box6 = new QGridLayout();
+        box6->setSpacing(2);
+        box6->setObjectName(QString::fromUtf8("box6"));
+        box6->setSizeConstraint(QLayout::SetDefaultConstraint);
+        box6->setContentsMargins(0, 0, -1, -1);
+        inp6_4 = new QTextEdit(gridLayoutWidget_3);
+        inp6_4->setObjectName(QString::fromUtf8("inp6_4"));
+        inp6_4->setFont(font);
+
+        box6->addWidget(inp6_4, 2, 0, 1, 1);
+
+        inp6_3 = new QTextEdit(gridLayoutWidget_3);
+        inp6_3->setObjectName(QString::fromUtf8("inp6_3"));
+        inp6_3->setFont(font);
+
+        box6->addWidget(inp6_3, 0, 2, 1, 1);
+
+        inp6_6 = new QTextEdit(gridLayoutWidget_3);
+        inp6_6->setObjectName(QString::fromUtf8("inp6_6"));
+        inp6_6->setFont(font);
+
+        box6->addWidget(inp6_6, 2, 2, 1, 1);
+
+        inp6_2 = new QTextEdit(gridLayoutWidget_3);
+        inp6_2->setObjectName(QString::fromUtf8("inp6_2"));
+        inp6_2->setFont(font);
+
+        box6->addWidget(inp6_2, 0, 1, 1, 1);
+
+        inp6_9 = new QTextEdit(gridLayoutWidget_3);
+        inp6_9->setObjectName(QString::fromUtf8("inp6_9"));
+        inp6_9->setFont(font);
+
+        box6->addWidget(inp6_9, 3, 2, 1, 1);
+
+        inp6_1 = new QTextEdit(gridLayoutWidget_3);
+        inp6_1->setObjectName(QString::fromUtf8("inp6_1"));
+        inp6_1->setFont(font);
+
+        box6->addWidget(inp6_1, 0, 0, 1, 1);
+
+        inp6_7 = new QTextEdit(gridLayoutWidget_3);
+        inp6_7->setObjectName(QString::fromUtf8("inp6_7"));
+        inp6_7->setFont(font);
+
+        box6->addWidget(inp6_7, 3, 0, 1, 1);
+
+        inp6_8 = new QTextEdit(gridLayoutWidget_3);
+        inp6_8->setObjectName(QString::fromUtf8("inp6_8"));
+        inp6_8->setFont(font);
+
+        box6->addWidget(inp6_8, 3, 1, 1, 1);
+
+        inp6_5 = new QTextEdit(gridLayoutWidget_3);
+        inp6_5->setObjectName(QString::fromUtf8("inp6_5"));
+        inp6_5->setFont(font);
+
+        box6->addWidget(inp6_5, 2, 1, 1, 1);
+
+
+        box->addLayout(box6, 1, 2, 1, 1);
 
         box2 = new QGridLayout();
         box2->setSpacing(2);
@@ -375,192 +633,6 @@ public:
 
         box->addLayout(box4, 1, 0, 1, 1);
 
-        box5 = new QGridLayout();
-        box5->setSpacing(2);
-        box5->setObjectName(QString::fromUtf8("box5"));
-        box5->setSizeConstraint(QLayout::SetDefaultConstraint);
-        box5->setContentsMargins(0, 0, -1, -1);
-        inp5_6 = new QTextEdit(gridLayoutWidget_3);
-        inp5_6->setObjectName(QString::fromUtf8("inp5_6"));
-        inp5_6->setFont(font);
-
-        box5->addWidget(inp5_6, 2, 2, 1, 1);
-
-        inp5_4 = new QTextEdit(gridLayoutWidget_3);
-        inp5_4->setObjectName(QString::fromUtf8("inp5_4"));
-        inp5_4->setFont(font);
-
-        box5->addWidget(inp5_4, 2, 0, 1, 1);
-
-        inp5_8 = new QTextEdit(gridLayoutWidget_3);
-        inp5_8->setObjectName(QString::fromUtf8("inp5_8"));
-        inp5_8->setFont(font);
-
-        box5->addWidget(inp5_8, 3, 1, 1, 1);
-
-        inp5_2 = new QTextEdit(gridLayoutWidget_3);
-        inp5_2->setObjectName(QString::fromUtf8("inp5_2"));
-        inp5_2->setFont(font);
-
-        box5->addWidget(inp5_2, 0, 1, 1, 1);
-
-        inp5_7 = new QTextEdit(gridLayoutWidget_3);
-        inp5_7->setObjectName(QString::fromUtf8("inp5_7"));
-        inp5_7->setFont(font);
-
-        box5->addWidget(inp5_7, 3, 0, 1, 1);
-
-        inp5_5 = new QTextEdit(gridLayoutWidget_3);
-        inp5_5->setObjectName(QString::fromUtf8("inp5_5"));
-        inp5_5->setFont(font);
-
-        box5->addWidget(inp5_5, 2, 1, 1, 1);
-
-        inp5_3 = new QTextEdit(gridLayoutWidget_3);
-        inp5_3->setObjectName(QString::fromUtf8("inp5_3"));
-        inp5_3->setFont(font);
-
-        box5->addWidget(inp5_3, 0, 2, 1, 1);
-
-        inp5_1 = new QTextEdit(gridLayoutWidget_3);
-        inp5_1->setObjectName(QString::fromUtf8("inp5_1"));
-        inp5_1->setFont(font);
-
-        box5->addWidget(inp5_1, 0, 0, 1, 1);
-
-        inp5_9 = new QTextEdit(gridLayoutWidget_3);
-        inp5_9->setObjectName(QString::fromUtf8("inp5_9"));
-        inp5_9->setFont(font);
-
-        box5->addWidget(inp5_9, 3, 2, 1, 1);
-
-
-        box->addLayout(box5, 1, 1, 1, 1);
-
-        box6 = new QGridLayout();
-        box6->setSpacing(2);
-        box6->setObjectName(QString::fromUtf8("box6"));
-        box6->setSizeConstraint(QLayout::SetDefaultConstraint);
-        box6->setContentsMargins(0, 0, -1, -1);
-        inp6_4 = new QTextEdit(gridLayoutWidget_3);
-        inp6_4->setObjectName(QString::fromUtf8("inp6_4"));
-        inp6_4->setFont(font);
-
-        box6->addWidget(inp6_4, 2, 0, 1, 1);
-
-        inp6_3 = new QTextEdit(gridLayoutWidget_3);
-        inp6_3->setObjectName(QString::fromUtf8("inp6_3"));
-        inp6_3->setFont(font);
-
-        box6->addWidget(inp6_3, 0, 2, 1, 1);
-
-        inp6_6 = new QTextEdit(gridLayoutWidget_3);
-        inp6_6->setObjectName(QString::fromUtf8("inp6_6"));
-        inp6_6->setFont(font);
-
-        box6->addWidget(inp6_6, 2, 2, 1, 1);
-
-        inp6_2 = new QTextEdit(gridLayoutWidget_3);
-        inp6_2->setObjectName(QString::fromUtf8("inp6_2"));
-        inp6_2->setFont(font);
-
-        box6->addWidget(inp6_2, 0, 1, 1, 1);
-
-        inp6_9 = new QTextEdit(gridLayoutWidget_3);
-        inp6_9->setObjectName(QString::fromUtf8("inp6_9"));
-        inp6_9->setFont(font);
-
-        box6->addWidget(inp6_9, 3, 2, 1, 1);
-
-        inp6_1 = new QTextEdit(gridLayoutWidget_3);
-        inp6_1->setObjectName(QString::fromUtf8("inp6_1"));
-        inp6_1->setFont(font);
-
-        box6->addWidget(inp6_1, 0, 0, 1, 1);
-
-        inp6_7 = new QTextEdit(gridLayoutWidget_3);
-        inp6_7->setObjectName(QString::fromUtf8("inp6_7"));
-        inp6_7->setFont(font);
-
-        box6->addWidget(inp6_7, 3, 0, 1, 1);
-
-        inp6_8 = new QTextEdit(gridLayoutWidget_3);
-        inp6_8->setObjectName(QString::fromUtf8("inp6_8"));
-        inp6_8->setFont(font);
-
-        box6->addWidget(inp6_8, 3, 1, 1, 1);
-
-        inp6_5 = new QTextEdit(gridLayoutWidget_3);
-        inp6_5->setObjectName(QString::fromUtf8("inp6_5"));
-        inp6_5->setFont(font);
-
-        box6->addWidget(inp6_5, 2, 1, 1, 1);
-
-
-        box->addLayout(box6, 1, 2, 1, 1);
-
-        box9 = new QGridLayout();
-        box9->setSpacing(2);
-        box9->setObjectName(QString::fromUtf8("box9"));
-        box9->setSizeConstraint(QLayout::SetDefaultConstraint);
-        box9->setContentsMargins(0, 0, -1, -1);
-        inp9_4 = new QTextEdit(gridLayoutWidget_3);
-        inp9_4->setObjectName(QString::fromUtf8("inp9_4"));
-        inp9_4->setFont(font);
-
-        box9->addWidget(inp9_4, 2, 0, 1, 1);
-
-        inp9_1 = new QTextEdit(gridLayoutWidget_3);
-        inp9_1->setObjectName(QString::fromUtf8("inp9_1"));
-        inp9_1->setFont(font);
-
-        box9->addWidget(inp9_1, 0, 0, 1, 1);
-
-        inp9_3 = new QTextEdit(gridLayoutWidget_3);
-        inp9_3->setObjectName(QString::fromUtf8("inp9_3"));
-        inp9_3->setFont(font);
-
-        box9->addWidget(inp9_3, 0, 2, 1, 1);
-
-        inp9_7 = new QTextEdit(gridLayoutWidget_3);
-        inp9_7->setObjectName(QString::fromUtf8("inp9_7"));
-        inp9_7->setFont(font);
-
-        box9->addWidget(inp9_7, 3, 0, 1, 1);
-
-        inp9_6 = new QTextEdit(gridLayoutWidget_3);
-        inp9_6->setObjectName(QString::fromUtf8("inp9_6"));
-        inp9_6->setFont(font);
-
-        box9->addWidget(inp9_6, 2, 2, 1, 1);
-
-        inp9_9 = new QTextEdit(gridLayoutWidget_3);
-        inp9_9->setObjectName(QString::fromUtf8("inp9_9"));
-        inp9_9->setFont(font);
-
-        box9->addWidget(inp9_9, 3, 2, 1, 1);
-
-        inp9_8 = new QTextEdit(gridLayoutWidget_3);
-        inp9_8->setObjectName(QString::fromUtf8("inp9_8"));
-        inp9_8->setFont(font);
-
-        box9->addWidget(inp9_8, 3, 1, 1, 1);
-
-        inp9_2 = new QTextEdit(gridLayoutWidget_3);
-        inp9_2->setObjectName(QString::fromUtf8("inp9_2"));
-        inp9_2->setFont(font);
-
-        box9->addWidget(inp9_2, 0, 1, 1, 1);
-
-        inp9_5 = new QTextEdit(gridLayoutWidget_3);
-        inp9_5->setObjectName(QString::fromUtf8("inp9_5"));
-        inp9_5->setFont(font);
-
-        box9->addWidget(inp9_5, 2, 1, 1, 1);
-
-
-        box->addLayout(box9, 2, 2, 1, 1);
-
         box8 = new QGridLayout();
         box8->setSpacing(2);
         box8->setObjectName(QString::fromUtf8("box8"));
@@ -622,68 +694,6 @@ public:
 
 
         box->addLayout(box8, 2, 1, 1, 1);
-
-        box7 = new QGridLayout();
-        box7->setSpacing(2);
-        box7->setObjectName(QString::fromUtf8("box7"));
-        box7->setSizeConstraint(QLayout::SetDefaultConstraint);
-        box7->setContentsMargins(0, 0, -1, -1);
-        inp7_4 = new QTextEdit(gridLayoutWidget_3);
-        inp7_4->setObjectName(QString::fromUtf8("inp7_4"));
-        inp7_4->setFont(font);
-
-        box7->addWidget(inp7_4, 2, 0, 1, 1);
-
-        inp7_1 = new QTextEdit(gridLayoutWidget_3);
-        inp7_1->setObjectName(QString::fromUtf8("inp7_1"));
-        inp7_1->setFont(font);
-
-        box7->addWidget(inp7_1, 0, 0, 1, 1);
-
-        inp7_3 = new QTextEdit(gridLayoutWidget_3);
-        inp7_3->setObjectName(QString::fromUtf8("inp7_3"));
-        inp7_3->setFont(font);
-
-        box7->addWidget(inp7_3, 0, 2, 1, 1);
-
-        inp7_7 = new QTextEdit(gridLayoutWidget_3);
-        inp7_7->setObjectName(QString::fromUtf8("inp7_7"));
-        inp7_7->setFont(font);
-
-        box7->addWidget(inp7_7, 3, 0, 1, 1);
-
-        inp7_6 = new QTextEdit(gridLayoutWidget_3);
-        inp7_6->setObjectName(QString::fromUtf8("inp7_6"));
-        inp7_6->setFont(font);
-
-        box7->addWidget(inp7_6, 2, 2, 1, 1);
-
-        inp7_9 = new QTextEdit(gridLayoutWidget_3);
-        inp7_9->setObjectName(QString::fromUtf8("inp7_9"));
-        inp7_9->setFont(font);
-
-        box7->addWidget(inp7_9, 3, 2, 1, 1);
-
-        inp7_8 = new QTextEdit(gridLayoutWidget_3);
-        inp7_8->setObjectName(QString::fromUtf8("inp7_8"));
-        inp7_8->setFont(font);
-
-        box7->addWidget(inp7_8, 3, 1, 1, 1);
-
-        inp7_2 = new QTextEdit(gridLayoutWidget_3);
-        inp7_2->setObjectName(QString::fromUtf8("inp7_2"));
-        inp7_2->setFont(font);
-
-        box7->addWidget(inp7_2, 0, 1, 1, 1);
-
-        inp7_5 = new QTextEdit(gridLayoutWidget_3);
-        inp7_5->setObjectName(QString::fromUtf8("inp7_5"));
-        inp7_5->setFont(font);
-
-        box7->addWidget(inp7_5, 2, 1, 1, 1);
-
-
-        box->addLayout(box7, 2, 0, 1, 1);
 
 
         retranslateUi(soduko);

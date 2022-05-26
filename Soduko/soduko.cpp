@@ -1,12 +1,16 @@
 #include "soduko.h"
 #include "ui_soduko.h"
 #include <QMessageBox>
+#include <stdlib.h>
+#include <time.h>
 
+void fill_rand();
 soduko::soduko(QWidget *parent) :
 	QWidget(parent),
 	ui(new Ui::soduko)
 {
 	ui->setupUi(this);
+	fill_rand();
 }
 
 soduko::~soduko()
@@ -14,7 +18,8 @@ soduko::~soduko()
 	delete ui;
 }
 
-int arr[9][9] = {};
+int boxs[9][9] = {};
+
 QString inp;
 void add_array(int w, int l)
 {
@@ -22,9 +27,146 @@ void add_array(int w, int l)
 	i = ((w / 3) * 3) + (l / 3);
 	j = ((w % 3) * 3) + (l % 3);
 	if (inp.size() == 1 && inp[0] <= 57 && inp[0] >= 49)
-		arr[i][j] = inp.toInt();
+		boxs[i][j] = inp.toInt();
 	else
-		arr[i][j] = 0;
+		boxs[i][j] = 0;
+}
+
+void del(int arr[9] , int index)
+{
+	for (int i = index+1; i < 9; i++)
+		arr[i-1] = arr[i];
+}
+void f_rand(int arr[9])
+{
+	int numbers[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+	int j = 9, random;
+	for (int i = 0; i < 9; i++)
+	{
+		srand(time(0));
+		random = rand() % j--;
+		arr[i] = numbers[random];
+		del(numbers, random);
+	}
+}
+void soduko::fill_rand()
+{
+	QTextEdit * inputs[9][9] =
+	{
+		{
+			this->ui->inp1_1 ,
+			this->ui->inp1_2 ,
+			this->ui->inp1_3 ,
+			this->ui->inp1_4 ,
+			this->ui->inp1_5 ,
+			this->ui->inp1_6 ,
+			this->ui->inp1_7 ,
+			this->ui->inp1_8 ,
+			this->ui->inp1_9
+		},
+		{
+			this->ui->inp2_1 ,
+			this->ui->inp2_2 ,
+			this->ui->inp2_3 ,
+			this->ui->inp2_4 ,
+			this->ui->inp2_5 ,
+			this->ui->inp2_6 ,
+			this->ui->inp2_7 ,
+			this->ui->inp2_8 ,
+			this->ui->inp2_9
+		},
+		{
+			this->ui->inp3_1 ,
+			this->ui->inp3_2 ,
+			this->ui->inp3_3 ,
+			this->ui->inp3_4 ,
+			this->ui->inp3_5 ,
+			this->ui->inp3_6 ,
+			this->ui->inp3_7 ,
+			this->ui->inp3_8 ,
+			this->ui->inp3_9
+		},
+		{
+			this->ui->inp4_1 ,
+			this->ui->inp4_2 ,
+			this->ui->inp4_3 ,
+			this->ui->inp4_4 ,
+			this->ui->inp4_5 ,
+			this->ui->inp4_6 ,
+			this->ui->inp4_7 ,
+			this->ui->inp4_8 ,
+			this->ui->inp4_9
+		},
+		{
+			this->ui->inp5_1 ,
+			this->ui->inp5_2 ,
+			this->ui->inp5_3 ,
+			this->ui->inp5_4 ,
+			this->ui->inp5_5 ,
+			this->ui->inp5_6 ,
+			this->ui->inp5_7 ,
+			this->ui->inp5_8 ,
+			this->ui->inp5_9
+		},
+		{
+			this->ui->inp6_1 ,
+			this->ui->inp6_2 ,
+			this->ui->inp6_3 ,
+			this->ui->inp6_4 ,
+			this->ui->inp6_5 ,
+			this->ui->inp6_6 ,
+			this->ui->inp6_7 ,
+			this->ui->inp6_8 ,
+			this->ui->inp6_9
+		},
+		{
+			this->ui->inp7_1 ,
+			this->ui->inp7_2 ,
+			this->ui->inp7_3 ,
+			this->ui->inp7_4 ,
+			this->ui->inp7_5 ,
+			this->ui->inp7_6 ,
+			this->ui->inp7_7 ,
+			this->ui->inp7_8 ,
+			this->ui->inp7_9
+		},
+		{
+			this->ui->inp8_1 ,
+			this->ui->inp8_2 ,
+			this->ui->inp8_3 ,
+			this->ui->inp8_4 ,
+			this->ui->inp8_5 ,
+			this->ui->inp8_6 ,
+			this->ui->inp8_7 ,
+			this->ui->inp8_8 ,
+			this->ui->inp8_9
+		},
+		{
+			this->ui->inp9_1 ,
+			this->ui->inp9_2 ,
+			this->ui->inp9_3 ,
+			this->ui->inp9_4 ,
+			this->ui->inp9_5 ,
+			this->ui->inp9_6 ,
+			this->ui->inp9_7 ,
+			this->ui->inp9_8 ,
+			this->ui->inp9_9
+		}
+	};
+	int random_arrange[9] = {};
+	int random_numbers[9] = {};
+	f_rand(random_arrange);
+	f_rand(random_numbers);
+
+	for (int i = 0; i < 9; i++)
+	{
+		boxs[i][random_arrange[i]-1] = random_numbers[i];
+		inputs[i][random_arrange[i]-1]->setText(QString::number(random_numbers[i]));
+//		if (i != 8)
+//			inputs[i][random_arrange[i+1]-1]->setText(QString::number(random_numbers[i+1]));
+//		else
+//			inputs[i][random_arrange[0]-1]->setText(QString::number(random_numbers[0]));
+	}
 }
 
 // box1
@@ -531,7 +673,7 @@ void soduko::on_btn_solve_clicked()
 	{
 		for (int j = 0; j < 9; j++)
 		{
-			if (arr[i][j] == 0)
+			if (boxs[i][j] == 0)
 			{
 				mb.setText("Fill All Blank With Numbers 1-9");
 				mb.setWindowTitle("Fill All");
@@ -550,11 +692,11 @@ void soduko::on_btn_solve_clicked()
 
 		for (int j = 0; j < 9; j++)
 		{
-			checkR[arr[i][j]-1] = 1;
-			checkC[arr[j][i]-1] = 1;
+			checkR[boxs[i][j]-1] = 1;
+			checkC[boxs[j][i]-1] = 1;
 			ii = ((i % 3) * 3) + (j % 3);
 			jj = ((i / 3) * 3) + (j / 3);
-			checkB[arr[ii][jj]-1] = 1;
+			checkB[boxs[ii][jj]-1] = 1;
 		}
 
 		for (int k = 0; k < 9; k++)

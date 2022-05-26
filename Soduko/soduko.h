@@ -16,6 +16,7 @@ public:
 	~soduko();
 
 private slots:
+	void fill_rand();
 	void on_inp1_1_textChanged();
 
 	void on_inp1_2_textChanged();

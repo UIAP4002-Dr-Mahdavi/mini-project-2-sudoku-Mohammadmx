@@ -17,14 +17,19 @@
    <widget class="QPushButton" name="btn_login">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>518</x>
       <y>370</y>
-      <width>89</width>
-      <height>25</height>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="text">
-     <string>OK</string>
+     <string>Start</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="enter_name">
@@ -80,6 +85,24 @@
     </property>
     <property name="text">
      <string>Soduko</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_leaderboard">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>460</y>
+      <width>501</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>LeaderBoard</string>
     </property>
    </widget>
   </widget>

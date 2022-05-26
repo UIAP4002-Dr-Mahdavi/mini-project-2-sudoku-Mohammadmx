@@ -22,7 +22,7 @@ void MainWindow::on_btn_login_clicked()
 	if (name.isEmpty())
 	{
 		QMessageBox mbox;
-		mbox.setText("Enter Name");
+		mbox.setText("Field Enter Name Is Empty");
 		mbox.setWindowTitle("Warning!");
 		mbox.setIcon(QMessageBox::Warning);
 		mbox.setStandardButtons(QMessageBox::Ok);

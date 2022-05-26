@@ -29,6 +29,7 @@ public:
     QLineEdit *enter_name;
     QLabel *label_name;
     QLabel *label_soduko;
+    QPushButton *btn_leaderboard;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -41,28 +42,37 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         btn_login = new QPushButton(centralwidget);
         btn_login->setObjectName(QString::fromUtf8("btn_login"));
-        btn_login->setGeometry(QRect(530, 370, 89, 25));
+        btn_login->setGeometry(QRect(518, 370, 101, 31));
+        QFont font;
+        font.setPointSize(12);
+        btn_login->setFont(font);
         enter_name = new QLineEdit(centralwidget);
         enter_name->setObjectName(QString::fromUtf8("enter_name"));
         enter_name->setGeometry(QRect(380, 290, 241, 41));
         label_name = new QLabel(centralwidget);
         label_name->setObjectName(QString::fromUtf8("label_name"));
         label_name->setGeometry(QRect(130, 290, 211, 41));
-        QFont font;
-        font.setPointSize(16);
-        label_name->setFont(font);
+        QFont font1;
+        font1.setPointSize(16);
+        label_name->setFont(font1);
         label_soduko = new QLabel(centralwidget);
         label_soduko->setObjectName(QString::fromUtf8("label_soduko"));
         label_soduko->setGeometry(QRect(200, 60, 381, 111));
-        QFont font1;
-        font1.setPointSize(80);
-        font1.setBold(true);
-        font1.setItalic(true);
-        font1.setUnderline(false);
-        font1.setWeight(75);
-        font1.setStrikeOut(false);
-        font1.setKerning(true);
-        label_soduko->setFont(font1);
+        QFont font2;
+        font2.setPointSize(80);
+        font2.setBold(true);
+        font2.setItalic(true);
+        font2.setUnderline(false);
+        font2.setWeight(75);
+        font2.setStrikeOut(false);
+        font2.setKerning(true);
+        label_soduko->setFont(font2);
+        btn_leaderboard = new QPushButton(centralwidget);
+        btn_leaderboard->setObjectName(QString::fromUtf8("btn_leaderboard"));
+        btn_leaderboard->setGeometry(QRect(120, 460, 501, 51));
+        QFont font3;
+        font3.setPointSize(18);
+        btn_leaderboard->setFont(font3);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -80,10 +90,11 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        btn_login->setText(QApplication::translate("MainWindow", "OK", nullptr));
+        btn_login->setText(QApplication::translate("MainWindow", "Start", nullptr));
         enter_name->setText(QString());
         label_name->setText(QApplication::translate("MainWindow", "Enter Your Name  :  ", nullptr));
         label_soduko->setText(QApplication::translate("MainWindow", "Soduko", nullptr));
+        btn_leaderboard->setText(QApplication::translate("MainWindow", "LeaderBoard", nullptr));
     } // retranslateUi
 
 };

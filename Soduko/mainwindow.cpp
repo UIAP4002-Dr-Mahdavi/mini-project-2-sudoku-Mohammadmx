@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "soduko.h"
+#include "leaderboard.h"
 #include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -35,4 +36,11 @@ void MainWindow::on_btn_login_clicked()
 		sdk->show();
 		this->close();
 	}
+}
+
+void MainWindow::on_btn_leaderboard_clicked()
+{
+	leaderBoard * lb = new leaderBoard();
+	lb->show();
+	this->close();
 }

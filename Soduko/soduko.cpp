@@ -18,9 +18,10 @@ soduko::~soduko()
 	delete ui;
 }
 
-int boxs[9][9] = {};
 
+int boxs[9][9] = {};
 QString inp;
+
 void add_array(int w, int l)
 {
 	int i, j;
@@ -37,6 +38,7 @@ void del(int arr[9] , int index)
 	for (int i = index+1; i < 9; i++)
 		arr[i-1] = arr[i];
 }
+
 void f_rand(int arr[9])
 {
 	int numbers[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -49,6 +51,7 @@ void f_rand(int arr[9])
 		del(numbers, random);
 	}
 }
+
 void soduko::fill_rand()
 {
 	QTextEdit * inputs[9][9] =
@@ -153,21 +156,37 @@ void soduko::fill_rand()
 			this->ui->inp9_9
 		}
 	};
-	int random_arrange[9] = {};
-	int random_numbers[9] = {};
-	f_rand(random_arrange);
+	int places[9][9] =
+	{
+		{0, 6, 3, 2, 8, 5, 1, 7, 4},
+		{1, 7, 4, 0, 6, 3, 2, 8, 5},
+		{2, 8, 5, 1, 7, 4, 0, 6, 3},
+		{3, 0, 6, 5, 2, 8, 4, 1, 7},
+		{4, 1, 7, 3, 0, 6, 5, 2, 8},
+		{5, 2, 8, 4, 1, 7, 3, 0, 6},
+		{6, 3, 0, 8, 5, 2, 7, 4, 1},
+		{7, 4, 1, 6, 3, 0, 8, 5, 2},
+		{8, 5, 2, 7, 4, 1, 6, 3, 2}
+	};
+
+	int random_numbers[9];
 	f_rand(random_numbers);
+
+	srand(time(0));
+	int rand1 = rand() % 8;
 
 	for (int i = 0; i < 9; i++)
 	{
-		boxs[i][random_arrange[i]-1] = random_numbers[i];
-		inputs[i][random_arrange[i]-1]->setText(QString::number(random_numbers[i]));
-//		if (i != 8)
-//			inputs[i][random_arrange[i+1]-1]->setText(QString::number(random_numbers[i+1]));
-//		else
-//			inputs[i][random_arrange[0]-1]->setText(QString::number(random_numbers[0]));
+		inputs[i][places[i][rand1]]->setText(QString::number(random_numbers[i]));
+		boxs[i][places[i][rand1]] = random_numbers[i];
+		if (i != 8)
+		{
+			inputs[i+1][places[i+1][rand1+1]]->setText(QString::number(random_numbers[i]));
+			boxs[i+1][places[i+1][rand1+1]] = random_numbers[i];
+		}
 	}
 }
+
 
 // box1
 void soduko::on_inp1_1_textChanged()

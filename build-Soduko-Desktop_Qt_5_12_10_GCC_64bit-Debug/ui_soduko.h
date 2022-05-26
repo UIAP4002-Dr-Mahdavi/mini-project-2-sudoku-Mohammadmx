@@ -120,7 +120,9 @@ public:
     {
         if (soduko->objectName().isEmpty())
             soduko->setObjectName(QString::fromUtf8("soduko"));
+        soduko->setEnabled(true);
         soduko->resize(829, 597);
+        soduko->setAcceptDrops(false);
         soduko->setStyleSheet(QString::fromUtf8("QTextEdit\n"
 "{\n"
 "background: rgb(243, 243, 243)\n"

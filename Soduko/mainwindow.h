@@ -18,6 +18,8 @@ public:
 private slots:
 	void on_btn_login_clicked();
 
+	void on_btn_leaderboard_clicked();
+
 private:
 	Ui::MainWindow *ui;
 };

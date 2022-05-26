@@ -1,5 +1,6 @@
 #include "soduko.h"
 #include "ui_soduko.h"
+#include <QMessageBox>
 
 soduko::soduko(QWidget *parent) :
 	QWidget(parent),
@@ -17,10 +18,13 @@ int arr[9][9] = {};
 QString inp;
 void add_array(int w, int l)
 {
+	int i, j;
+	i = ((w / 3) * 3) + (l / 3);
+	j = ((w % 3) * 3) + (l % 3);
 	if (inp.size() == 1 && inp[0] <= 57 && inp[0] >= 49)
-		arr[w][l] = inp.toInt();
+		arr[i][j] = inp.toInt();
 	else
-		arr[w][l] = 0;
+		arr[i][j] = 0;
 }
 
 // box1
@@ -516,5 +520,63 @@ void soduko::on_inp9_9_textChanged()
 {
 	inp = this->ui->inp9_9->toPlainText();
 	add_array(8, 8);
+}
+
+
+void soduko::on_btn_solve_clicked()
+{
+	QMessageBox mb;
+
+	for (int i = 0; i < 9; i++)
+	{
+		for (int j = 0; j < 9; j++)
+		{
+			if (arr[i][j] == 0)
+			{
+				mb.setText("Fill All Blank With Numbers 1-9");
+				mb.setWindowTitle("Fill All");
+				mb.exec();
+				return ;
+			}
+		}
+	}
+
+	int ii, jj;
+	for (int i = 0; i < 9; i++)
+	{
+		int checkR[9] = {};
+		int checkC[9] = {};
+		int checkB[9] = {};
+
+		for (int j = 0; j < 9; j++)
+		{
+			checkR[arr[i][j]-1] = 1;
+			checkC[arr[j][i]-1] = 1;
+			ii = ((i % 3) * 3) + (j % 3);
+			jj = ((i / 3) * 3) + (j / 3);
+			checkB[arr[ii][jj]-1] = 1;
+		}
+
+		for (int k = 0; k < 9; k++)
+		{
+			if (checkR[k] == 0 || checkC[k] == 0 || checkB[k] == 0)
+			{
+				mb.setText("Your Answer Is Wrong!");
+				mb.setWindowTitle("Try Again!");
+				mb.exec();
+				return ;
+			}
+		}
+	}
+
+	mb.setText("Yor Are Solve This Soduko !!!");
+	mb.setWindowTitle("Win");
+	mb.exec();
+}
+
+
+void soduko::on_btn_finish_clicked()
+{
+	this->close();
 }
 

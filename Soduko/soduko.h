@@ -178,6 +178,10 @@ private slots:
 
 	void on_inp9_9_textChanged();
 
+	void on_btn_solve_clicked();
+
+	void on_btn_finish_clicked();
+
 private:
 	Ui::soduko *ui;
 };

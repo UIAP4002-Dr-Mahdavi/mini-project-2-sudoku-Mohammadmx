@@ -2,26 +2,17 @@
 #include "ui_soduko.h"
 #include "endgame.h"
 #include "mainwindow.h"
-#include <QMessageBox>
-#include <stdlib.h>
-#include <time.h>
-#include <QFile>
-#include <QTextStream>
-#include <QDebug>
-#include <QVector>
 
 #define address "/home/mohmammad/Desktop/Term 2/MiniProject 2/mini-project-2-sudoku-Mohammadmx/Soduko/LeaderBoard.txt"
 
 
-void fill_rand();
-QString nn;
 soduko::soduko(QString n, QWidget *parent) :
 	QWidget(parent),
 	ui(new Ui::soduko)
 {
 	ui->setupUi(this);
 	fill_rand();
-	nn = n;
+	name = n;
 }
 
 soduko::~soduko()
@@ -30,12 +21,7 @@ soduko::~soduko()
 }
 
 
-int boxs[9][9] = {};
-QString inp;
-
-
-
-void add_array(int w, int l)
+void soduko::add_array(int w, int l)
 {
 	int i, j;
 	i = ((w / 3) * 3) + (l / 3);
@@ -46,13 +32,15 @@ void add_array(int w, int l)
 		boxs[i][j] = 0;
 }
 
-void del(int arr[9] , int index)
+
+void soduko::del(int arr[9] , int index)
 {
 	for (int i = index+1; i < 9; i++)
 		arr[i-1] = arr[i];
 }
 
-void f_rand(int arr[9])
+
+void soduko::f_rand(int arr[9])
 {
 	int numbers[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 	int j = 9, random;
@@ -64,6 +52,7 @@ void f_rand(int arr[9])
 		del(numbers, random);
 	}
 }
+
 
 void soduko::fill_rand()
 {
@@ -179,7 +168,7 @@ void soduko::fill_rand()
 		{5, 2, 8, 4, 1, 7, 3, 0, 6},
 		{6, 3, 0, 8, 5, 2, 7, 4, 1},
 		{7, 4, 1, 6, 3, 0, 8, 5, 2},
-		{8, 5, 2, 7, 4, 1, 6, 3, 2}
+		{8, 5, 2, 7, 4, 1, 6, 3, 0}
 	};
 
 	int random_numbers[9];
@@ -505,7 +494,7 @@ void soduko::on_inp5_8_textChanged()
 void soduko::on_inp5_9_textChanged()
 {
 	inp = this->ui->inp5_9->toPlainText();
-	add_array(4,8);
+	add_array(4, 8);
 }
 
 // box6
@@ -728,7 +717,7 @@ void soduko::on_inp9_9_textChanged()
 	add_array(8, 8);
 }
 
-
+// buttons
 void soduko::on_btn_solve_clicked()
 {
 	QMessageBox mb;
@@ -737,6 +726,7 @@ void soduko::on_btn_solve_clicked()
 	{
 		for (int j = 0; j < 9; j++)
 		{
+			boxs[i][j] ++;
 			if (boxs[i][j] == 0)
 			{
 				mb.setText("Fill All Blank With Numbers 1-9");
@@ -783,7 +773,7 @@ void soduko::on_btn_solve_clicked()
 		QMessageBox::warning(this,"title","File Not Open");
 		return;
 	}
-	QString name = nn;
+
 	QTextStream in(&file);
 	QString line;
 	QVector<QString> names;
@@ -835,7 +825,7 @@ void soduko::on_btn_solve_clicked()
 	mb.setWindowTitle("Win");
 	mb.exec();
 
-	endgame * endg = new endgame();
+	endgame * endg = new endgame(true);
 	endg->show();
 	this->close();
 
@@ -844,7 +834,7 @@ void soduko::on_btn_solve_clicked()
 
 void soduko::on_btn_finish_clicked()
 {
-	endgame * egame = new endgame();
+	endgame * egame = new endgame(false);
 	egame->show();
 	this->close();
 }
@@ -852,13 +842,14 @@ void soduko::on_btn_finish_clicked()
 
 void soduko::on_btn_restart_clicked()
 {
-	soduko * sodo = new soduko(nn);
+	soduko * sodo = new soduko(name);
 	sodo->show();
 	this->close();
 
 }
 
-void soduko::on_pushButton_clicked()
+
+void soduko::on_btn_exit_clicked()
 {
 	this->close();
 }

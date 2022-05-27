@@ -2,6 +2,11 @@
 #define LEADERBOARD_H
 
 #include <QWidget>
+#include <QFile>
+#include <QTextStream>
+#include <QMessageBox>
+#include <QDebug>
+#include <QVector>
 
 namespace Ui {
 class leaderBoard;
@@ -20,7 +25,7 @@ private slots:
 
 	void on_btn_firstpage_clicked();
 
-	void on_pushButton_3_clicked();
+	void on_btn_exit_clicked();
 
 private:
 	Ui::leaderBoard *ui;

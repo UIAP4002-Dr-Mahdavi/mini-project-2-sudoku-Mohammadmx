@@ -18,6 +18,20 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">endgame
+{
+	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0.179, y2:0.659045, 			stop:0 rgba(75, 206, 246, 255), stop:1 rgba(238, 238, 236, 255));
+}
+QPushButton
+{
+border-radius:12px;
+}
+QPushButton:hover
+{
+color:white;
+}</string>
+  </property>
   <widget class="QPushButton" name="btn_firstpage">
    <property name="geometry">
     <rect>
@@ -31,6 +45,9 @@
     <font>
      <pointsize>18</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:qlineargradient(spread:pad, x1:1, y1:1, x2:0.179, y2:0.659045, stop:0 rgba(246, 53, 230, 255), stop:1 rgba(238, 238, 236, 255))</string>
    </property>
    <property name="text">
     <string>First Page</string>
@@ -50,6 +67,9 @@
      <pointsize>18</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0.179, y2:0.659045, stop:0 rgba(246, 53, 230, 255), stop:1 rgba(238, 238, 236, 255));</string>
+   </property>
    <property name="text">
     <string>Exit</string>
    </property>
@@ -68,26 +88,35 @@
      <pointsize>18</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0.179, y2:0.659045, stop:0 rgba(246, 53, 230, 255), stop:1 rgba(238, 238, 236, 255));</string>
+   </property>
    <property name="text">
     <string>Leader Board</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="textedit">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>50</y>
-     <width>461</width>
-     <height>231</height>
+     <y>40</y>
+     <width>431</width>
+     <height>141</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>20</pointsize>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(164, 0, 0);</string>
+   </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
  </widget>

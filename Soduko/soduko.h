@@ -2,6 +2,13 @@
 #define SODUKO_H
 
 #include <QWidget>
+#include <QMessageBox>
+#include <stdlib.h>
+#include <time.h>
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
+#include <QVector>
 
 namespace Ui {
 class soduko;
@@ -15,8 +22,12 @@ public:
 	explicit soduko(QString ,QWidget *parent = nullptr);
 	~soduko();
 
-private slots:
+	void add_array(int, int);
+	void del(int[], int);
+	void f_rand(int[]);
 	void fill_rand();
+
+private slots:
 	void on_inp1_1_textChanged();
 
 	void on_inp1_2_textChanged();
@@ -185,10 +196,14 @@ private slots:
 
 	void on_btn_restart_clicked();
 
-	void on_pushButton_clicked();
+	void on_btn_exit_clicked();
 
 private:
 	Ui::soduko *ui;
+
+	int boxs[9][9] = {};
+	QString name;
+	QString inp;
 };
 
 #endif // SODUKO_H

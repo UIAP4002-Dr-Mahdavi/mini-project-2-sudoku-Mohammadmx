@@ -17,6 +17,14 @@
    <string notr="true">MainWindow
 {
 background-color:qlineargradient(spread:pad, x1:0, y1:0.973, x2:0.915025, y2:0.097, stop:0.00497512 rgba(0, 0, 0, 255), stop:0.482587 rgba(61, 155, 235, 255), stop:0.895522 rgba(255, 102, 248, 255))
+}
+QPushButton
+{
+border-radius:10px;
+}
+QPushButton:hover
+{
+color:rgb(238, 238, 236);
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -35,7 +43,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.973, x2:0.915025, y2:0.0
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(76, 22, 184)</string>
+     <string notr="true">background-color:rgb(76, 22, 184);</string>
     </property>
     <property name="text">
      <string>Start</string>
@@ -61,7 +69,8 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.973, x2:0.915025, y2:0.0
     </property>
     <property name="styleSheet">
      <string notr="true">background-color:rgb(75, 206, 246);
-font: 75 24pt &quot;UnPilgia&quot;;</string>
+font: 75 24pt &quot;UnPilgia&quot;;
+border-radius:8px;</string>
     </property>
     <property name="text">
      <string/>
@@ -97,7 +106,7 @@ font: 75 24pt &quot;UnPilgia&quot;;</string>
     <property name="font">
      <font>
       <family>Serif</family>
-      <pointsize>70</pointsize>
+      <pointsize>60</pointsize>
       <weight>75</weight>
       <italic>true</italic>
       <bold>true</bold>
@@ -107,7 +116,7 @@ font: 75 24pt &quot;UnPilgia&quot;;</string>
      </font>
     </property>
     <property name="text">
-     <string>Soduko</string>
+     <string>SODUKO</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_leaderboard">

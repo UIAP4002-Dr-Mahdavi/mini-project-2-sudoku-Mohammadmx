@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 #include "soduko.h"
 #include "leaderboard.h"
-#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
@@ -16,7 +15,7 @@ MainWindow::~MainWindow()
 	delete ui;
 }
 
-QString name;
+
 void MainWindow::on_btn_login_clicked()
 {
 	name = this->ui->enter_name->text();
@@ -38,6 +37,7 @@ void MainWindow::on_btn_login_clicked()
 	}
 }
 
+
 void MainWindow::on_btn_leaderboard_clicked()
 {
 	leaderBoard * lb = new leaderBoard();
@@ -45,7 +45,9 @@ void MainWindow::on_btn_leaderboard_clicked()
 	this->close();
 }
 
+
 void MainWindow::on_btn_quit_clicked()
 {
 	this->close();
 }
+

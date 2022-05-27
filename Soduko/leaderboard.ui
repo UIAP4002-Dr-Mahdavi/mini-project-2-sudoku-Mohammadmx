@@ -17,6 +17,18 @@
    <string notr="true">leaderBoard 
 {
 background-color: rgb(50, 50, 50)
+}
+QPushButton
+{
+border-radius:12px;
+}
+QPlainTextEdit
+{
+border-radius:8px;
+}
+QPushButton:hover
+{
+color:white;
 }</string>
   </property>
   <widget class="QPlainTextEdit" name="lb_names">
@@ -151,7 +163,7 @@ background-color: rgb(50, 50, 50)
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="btn_exit">
       <property name="maximumSize">
        <size>
         <width>150</width>

@@ -23,6 +23,14 @@
    <string notr="true">soduko
 {
 background: rgb(46, 52, 54)
+}
+QPushButton
+{
+border-radius:12px;
+}
+QPushButton:hover
+{
+	color:white;
 }</string>
   </property>
   <widget class="QWidget" name="gridLayoutWidget_3">
@@ -1503,7 +1511,7 @@ p, li { white-space: pre-wrap; }
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btn_exit">
       <property name="maximumSize">
        <size>
         <width>160</width>

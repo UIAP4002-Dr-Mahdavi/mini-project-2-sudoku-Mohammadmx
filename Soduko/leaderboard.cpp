@@ -2,13 +2,9 @@
 #include "ui_leaderboard.h"
 #include "soduko.h"
 #include "mainwindow.h"
-#include <QFile>
-#include <QTextStream>
-#include <QMessageBox>
-#include <QDebug>
-#include <QVector>
 
 #define address "/home/mohmammad/Desktop/Term 2/MiniProject 2/mini-project-2-sudoku-Mohammadmx/Soduko/LeaderBoard.txt"
+
 
 leaderBoard::leaderBoard(QWidget *parent) :
 	QWidget(parent),
@@ -75,7 +71,9 @@ void leaderBoard::on_btn_firstpage_clicked()
 	this->close();
 }
 
-void leaderBoard::on_pushButton_3_clicked()
+
+void leaderBoard::on_btn_exit_clicked()
 {
 	this->close();
 }
+

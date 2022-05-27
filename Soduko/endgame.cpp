@@ -3,17 +3,31 @@
 #include "leaderboard.h"
 #include "mainwindow.h"
 
-endgame::endgame(QWidget *parent) :
+
+endgame::endgame(bool win, QWidget *parent) :
 	QWidget(parent),
 	ui(new Ui::endgame)
 {
 	ui->setupUi(this);
+	set_text(win);
 }
 
 endgame::~endgame()
 {
 	delete ui;
 }
+
+
+void endgame::set_text(bool w)
+{
+	if (w)
+	{
+		this->ui->textedit->setText("You Solve This Sodoku");
+	}
+	else
+		this->ui->textedit->setText("You Can't Solve Soduko");
+}
+
 
 void endgame::on_btn_firstpage_clicked()
 {
@@ -22,6 +36,7 @@ void endgame::on_btn_firstpage_clicked()
 	this->close();
 }
 
+
 void endgame::on_btn_leaderboard_clicked()
 {
 	leaderBoard * lb = new leaderBoard();
@@ -29,7 +44,9 @@ void endgame::on_btn_leaderboard_clicked()
 	this->close();
 }
 
+
 void endgame::on_btn_exit_clicked()
 {
 	this->close();
 }
+

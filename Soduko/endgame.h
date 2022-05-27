@@ -12,8 +12,10 @@ class endgame : public QWidget
 	Q_OBJECT
 
 public:
-	explicit endgame(QWidget *parent = nullptr);
+	explicit endgame(bool win, QWidget *parent = nullptr);
 	~endgame();
+
+	void set_text(bool);
 
 private slots:
 	void on_btn_firstpage_clicked();

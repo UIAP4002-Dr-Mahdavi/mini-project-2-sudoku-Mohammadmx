@@ -1297,7 +1297,21 @@ endgame.o: ../Soduko/endgame.cpp ../Soduko/endgame.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qfiledevice.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qvector2d.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtouchdevice.h \
-		ui_endgame.h
+		ui_endgame.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QVariant \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QApplication \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qapplication.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qeventloop.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qguiapplication.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qinputmethod.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QPushButton \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qicon.h \
+		../Soduko/leaderboard.h \
+		../Soduko/soduko.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o endgame.o ../Soduko/endgame.cpp
 
 leaderboard.o: ../Soduko/leaderboard.cpp ../Soduko/leaderboard.h \
@@ -1412,7 +1426,31 @@ leaderboard.o: ../Soduko/leaderboard.cpp ../Soduko/leaderboard.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/qeventloop.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qdesktopwidget.h \
 		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qguiapplication.h \
-		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qinputmethod.h
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qinputmethod.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QLabel \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qlabel.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qframe.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QPlainTextEdit \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qplaintextedit.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtextdocument.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtextoption.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtextcursor.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtextformat.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qpen.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qtextlayout.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qglyphrun.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qrawfont.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtGui/qfontdatabase.h \
+		../Soduko/soduko.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QFile \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QTextStream \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/QMessageBox \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtWidgets/qdialog.h \
+		/home/mohmammad/Qt5.12.10/5.12.10/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o leaderboard.o ../Soduko/leaderboard.cpp
 
 main.o: ../Soduko/main.cpp ../Soduko/mainwindow.h \

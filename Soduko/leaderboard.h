@@ -15,6 +15,9 @@ public:
 	explicit leaderBoard(QWidget *parent = nullptr);
 	~leaderBoard();
 
+private slots:
+	void on_btn_show_clicked();
+
 private:
 	Ui::leaderBoard *ui;
 };

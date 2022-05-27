@@ -178,11 +178,11 @@ void soduko::fill_rand()
 
 	for (int i = 0; i < 9; i++)
 	{
-		inputs[i][places[i][rand1]]->setText(QString::number(random_numbers[i]));
+		inputs[i][places[i][rand1]]->setPlainText(QString::number(random_numbers[i]));
 		boxs[i][places[i][rand1]] = random_numbers[i];
 		if (i != 8)
 		{
-			inputs[i+1][places[i+1][rand1+1]]->setText(QString::number(random_numbers[i]));
+			inputs[i+1][places[i+1][rand1+1]]->setPlainText(QString::number(random_numbers[i]));
 			boxs[i+1][places[i+1][rand1+1]] = random_numbers[i];
 		}
 	}

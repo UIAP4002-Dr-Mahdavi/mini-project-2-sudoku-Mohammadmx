@@ -16,11 +16,11 @@ public:
 	~endgame();
 
 private slots:
-	void on_btn_playagain_clicked();
+	void on_btn_firstpage_clicked();
 
 	void on_btn_leaderboard_clicked();
 
-	void on_btn_leavegame_clicked();
+	void on_btn_exit_clicked();
 
 private:
 	Ui::endgame *ui;

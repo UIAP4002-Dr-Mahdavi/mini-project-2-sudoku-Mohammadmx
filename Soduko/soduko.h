@@ -183,6 +183,10 @@ private slots:
 
 	void on_btn_finish_clicked();
 
+	void on_btn_restart_clicked();
+
+	void on_pushButton_clicked();
+
 private:
 	Ui::soduko *ui;
 };

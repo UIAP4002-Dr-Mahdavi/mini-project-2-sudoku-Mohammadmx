@@ -18,7 +18,9 @@ public:
 private slots:
 	void on_btn_show_clicked();
 
-	void on_btn_edit_clicked();
+	void on_btn_firstpage_clicked();
+
+	void on_pushButton_3_clicked();
 
 private:
 	Ui::leaderBoard *ui;

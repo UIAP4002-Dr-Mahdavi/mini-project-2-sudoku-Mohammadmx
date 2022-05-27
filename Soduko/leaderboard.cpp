@@ -1,6 +1,7 @@
 #include "leaderboard.h"
 #include "ui_leaderboard.h"
 #include "soduko.h"
+#include "mainwindow.h"
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
@@ -66,7 +67,15 @@ void leaderBoard::on_btn_show_clicked()
 	file.close();
 }
 
-void leaderBoard::on_btn_edit_clicked()
-{
 
+void leaderBoard::on_btn_firstpage_clicked()
+{
+	MainWindow * mw = new MainWindow();
+	mw->show();
+	this->close();
+}
+
+void leaderBoard::on_pushButton_3_clicked()
+{
+	this->close();
 }

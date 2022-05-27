@@ -14,6 +14,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextEdit>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -113,7 +114,10 @@ public:
     QTextEdit *inp1_1;
     QTextEdit *inp1_5;
     QTextEdit *inp1_4;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout;
     QPushButton *btn_solve;
+    QPushButton *btn_restart;
     QPushButton *btn_finish;
     QPushButton *pushButton;
 
@@ -122,7 +126,7 @@ public:
         if (soduko->objectName().isEmpty())
             soduko->setObjectName(QString::fromUtf8("soduko"));
         soduko->setEnabled(true);
-        soduko->resize(829, 597);
+        soduko->resize(829, 609);
         soduko->setAcceptDrops(false);
         soduko->setStyleSheet(QString::fromUtf8("soduko\n"
 "{\n"
@@ -783,22 +787,46 @@ public:
 
         box->addLayout(box1, 0, 0, 1, 1);
 
-        btn_solve = new QPushButton(soduko);
+        widget = new QWidget(soduko);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(620, 110, 161, 491));
+        verticalLayout = new QVBoxLayout(widget);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        btn_solve = new QPushButton(widget);
         btn_solve->setObjectName(QString::fromUtf8("btn_solve"));
-        btn_solve->setGeometry(QRect(600, 509, 171, 71));
-        btn_solve->setMaximumSize(QSize(500, 500));
+        btn_solve->setMaximumSize(QSize(160, 80));
         QFont font1;
         font1.setPointSize(18);
         btn_solve->setFont(font1);
-        btn_solve->setStyleSheet(QString::fromUtf8("background-color: rgb(75, 206, 246);"));
-        btn_finish = new QPushButton(soduko);
+        btn_solve->setStyleSheet(QString::fromUtf8("background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(204, 0, 0, 255), stop:1 rgba(255, 255, 255, 255))"));
+
+        verticalLayout->addWidget(btn_solve);
+
+        btn_restart = new QPushButton(widget);
+        btn_restart->setObjectName(QString::fromUtf8("btn_restart"));
+        btn_restart->setMaximumSize(QSize(160, 80));
+        btn_restart->setFont(font1);
+        btn_restart->setStyleSheet(QString::fromUtf8("background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255))"));
+
+        verticalLayout->addWidget(btn_restart);
+
+        btn_finish = new QPushButton(widget);
         btn_finish->setObjectName(QString::fromUtf8("btn_finish"));
-        btn_finish->setGeometry(QRect(600, 399, 171, 71));
+        btn_finish->setMaximumSize(QSize(160, 80));
         btn_finish->setFont(font1);
-        btn_finish->setStyleSheet(QString::fromUtf8("background-color:rgb(239, 41, 41)"));
-        pushButton = new QPushButton(soduko);
+        btn_finish->setStyleSheet(QString::fromUtf8("background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(204, 0, 0, 255), stop:1 rgba(255, 255, 255, 255))"));
+
+        verticalLayout->addWidget(btn_finish);
+
+        pushButton = new QPushButton(widget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(600, 290, 151, 61));
+        pushButton->setMaximumSize(QSize(160, 80));
+        pushButton->setFont(font1);
+        pushButton->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));"));
+
+        verticalLayout->addWidget(pushButton);
+
 
         retranslateUi(soduko);
 
@@ -814,8 +842,9 @@ public:
 "</style></head><body style=\" font-family:'Ubuntu'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         btn_solve->setText(QApplication::translate("soduko", "solve", nullptr));
+        btn_restart->setText(QApplication::translate("soduko", "ReStart", nullptr));
         btn_finish->setText(QApplication::translate("soduko", "Finish", nullptr));
-        pushButton->setText(QApplication::translate("soduko", "ReStart", nullptr));
+        pushButton->setText(QApplication::translate("soduko", "Exit", nullptr));
     } // retranslateUi
 
 };

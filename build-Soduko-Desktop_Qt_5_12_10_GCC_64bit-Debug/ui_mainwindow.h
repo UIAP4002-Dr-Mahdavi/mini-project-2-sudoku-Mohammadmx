@@ -30,6 +30,7 @@ public:
     QLabel *label_name;
     QLabel *label_soduko;
     QPushButton *btn_leaderboard;
+    QPushButton *btn_quit;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -37,7 +38,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(800, 600);
+        MainWindow->resize(789, 629);
         MainWindow->setStyleSheet(QString::fromUtf8("MainWindow\n"
 "{\n"
 "background-color:qlineargradient(spread:pad, x1:0, y1:0.973, x2:0.915025, y2:0.097, stop:0.00497512 rgba(0, 0, 0, 255), stop:0.482587 rgba(61, 155, 235, 255), stop:0.895522 rgba(255, 102, 248, 255))\n"
@@ -55,9 +56,14 @@ public:
         enter_name->setObjectName(QString::fromUtf8("enter_name"));
         enter_name->setGeometry(QRect(380, 290, 241, 41));
         QFont font1;
-        font1.setPointSize(16);
+        font1.setFamily(QString::fromUtf8("UnPilgia"));
+        font1.setPointSize(24);
+        font1.setBold(false);
+        font1.setItalic(false);
+        font1.setWeight(9);
         enter_name->setFont(font1);
-        enter_name->setStyleSheet(QString::fromUtf8("background-color:rgb(75, 206, 246)"));
+        enter_name->setStyleSheet(QString::fromUtf8("background-color:rgb(75, 206, 246);\n"
+"font: 75 24pt \"UnPilgia\";"));
         label_name = new QLabel(centralwidget);
         label_name->setObjectName(QString::fromUtf8("label_name"));
         label_name->setGeometry(QRect(130, 290, 211, 41));
@@ -83,11 +89,17 @@ public:
         QFont font4;
         font4.setPointSize(20);
         btn_leaderboard->setFont(font4);
-        btn_leaderboard->setStyleSheet(QString::fromUtf8("background-color:qlineargradient(spread:pad, x1:0, y1:1, x2:0.915025, y2:0.097, stop:0 rgba(48, 48, 48, 255), stop:0.517413 rgba(61, 97, 235, 255), stop:0.895522 rgba(63, 195, 255, 255))"));
+        btn_leaderboard->setStyleSheet(QString::fromUtf8("background-color:qlineargradient(spread:pad, x1:0, y1:1, x2:0.915025, y2:0.097, stop:0 rgba(48, 48, 48, 255), stop:0.517413 rgba(61, 97, 235, 255), stop:0.895522 rgba(63, 195, 255, 255));\n"
+"border-color: rgb(216, 79, 213);"));
+        btn_quit = new QPushButton(centralwidget);
+        btn_quit->setObjectName(QString::fromUtf8("btn_quit"));
+        btn_quit->setGeometry(QRect(380, 370, 101, 31));
+        btn_quit->setFont(font);
+        btn_quit->setStyleSheet(QString::fromUtf8("background-color:rgb(76, 22, 184)"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 789, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -106,6 +118,7 @@ public:
         label_name->setText(QApplication::translate("MainWindow", "Enter Your Name  :  ", nullptr));
         label_soduko->setText(QApplication::translate("MainWindow", "Soduko", nullptr));
         btn_leaderboard->setText(QApplication::translate("MainWindow", "LeaderBoard", nullptr));
+        btn_quit->setText(QApplication::translate("MainWindow", "Exit", nullptr));
     } // retranslateUi
 
 };

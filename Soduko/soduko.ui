@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>829</width>
-    <height>597</height>
+    <height>609</height>
    </rect>
   </property>
   <property name="acceptDrops">
@@ -1429,66 +1429,101 @@ p, li { white-space: pre-wrap; }
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="btn_solve">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>600</x>
-     <y>509</y>
-     <width>171</width>
-     <height>71</height>
+     <x>620</x>
+     <y>110</y>
+     <width>161</width>
+     <height>491</height>
     </rect>
    </property>
-   <property name="maximumSize">
-    <size>
-     <width>500</width>
-     <height>500</height>
-    </size>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>18</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(75, 206, 246);</string>
-   </property>
-   <property name="text">
-    <string>solve</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_finish">
-   <property name="geometry">
-    <rect>
-     <x>600</x>
-     <y>399</y>
-     <width>171</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>18</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:rgb(239, 41, 41)</string>
-   </property>
-   <property name="text">
-    <string>Finish</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>600</x>
-     <y>290</y>
-     <width>151</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>ReStart</string>
-   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="btn_solve">
+      <property name="maximumSize">
+       <size>
+        <width>160</width>
+        <height>80</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(204, 0, 0, 255), stop:1 rgba(255, 255, 255, 255))</string>
+      </property>
+      <property name="text">
+       <string>solve</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn_restart">
+      <property name="maximumSize">
+       <size>
+        <width>160</width>
+        <height>80</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255))</string>
+      </property>
+      <property name="text">
+       <string>ReStart</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn_finish">
+      <property name="maximumSize">
+       <size>
+        <width>160</width>
+        <height>80</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(204, 0, 0, 255), stop:1 rgba(255, 255, 255, 255))</string>
+      </property>
+      <property name="text">
+       <string>Finish</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="maximumSize">
+       <size>
+        <width>160</width>
+        <height>80</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+      </property>
+      <property name="text">
+       <string>Exit</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

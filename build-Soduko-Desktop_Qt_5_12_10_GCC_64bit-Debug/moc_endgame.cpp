@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_endgame_t {
     QByteArrayData data[5];
-    char stringdata0[86];
+    char stringdata0[81];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,15 +32,15 @@ struct qt_meta_stringdata_endgame_t {
 static const qt_meta_stringdata_endgame_t qt_meta_stringdata_endgame = {
     {
 QT_MOC_LITERAL(0, 0, 7), // "endgame"
-QT_MOC_LITERAL(1, 8, 24), // "on_btn_playagain_clicked"
+QT_MOC_LITERAL(1, 8, 24), // "on_btn_firstpage_clicked"
 QT_MOC_LITERAL(2, 33, 0), // ""
 QT_MOC_LITERAL(3, 34, 26), // "on_btn_leaderboard_clicked"
-QT_MOC_LITERAL(4, 61, 24) // "on_btn_leavegame_clicked"
+QT_MOC_LITERAL(4, 61, 19) // "on_btn_exit_clicked"
 
     },
-    "endgame\0on_btn_playagain_clicked\0\0"
+    "endgame\0on_btn_firstpage_clicked\0\0"
     "on_btn_leaderboard_clicked\0"
-    "on_btn_leavegame_clicked"
+    "on_btn_exit_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -76,9 +76,9 @@ void endgame::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         auto *_t = static_cast<endgame *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_btn_playagain_clicked(); break;
+        case 0: _t->on_btn_firstpage_clicked(); break;
         case 1: _t->on_btn_leaderboard_clicked(); break;
-        case 2: _t->on_btn_leavegame_clicked(); break;
+        case 2: _t->on_btn_exit_clicked(); break;
         default: ;
         }
     }

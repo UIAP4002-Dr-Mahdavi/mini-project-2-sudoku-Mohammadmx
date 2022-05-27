@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>789</width>
+    <height>629</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -52,11 +52,16 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.973, x2:0.915025, y2:0.0
     </property>
     <property name="font">
      <font>
-      <pointsize>16</pointsize>
+      <family>UnPilgia</family>
+      <pointsize>24</pointsize>
+      <weight>9</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(75, 206, 246)</string>
+     <string notr="true">background-color:rgb(75, 206, 246);
+font: 75 24pt &quot;UnPilgia&quot;;</string>
     </property>
     <property name="text">
      <string/>
@@ -120,10 +125,32 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.973, x2:0.915025, y2:0.0
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:1, x2:0.915025, y2:0.097, stop:0 rgba(48, 48, 48, 255), stop:0.517413 rgba(61, 97, 235, 255), stop:0.895522 rgba(63, 195, 255, 255))</string>
+     <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:1, x2:0.915025, y2:0.097, stop:0 rgba(48, 48, 48, 255), stop:0.517413 rgba(61, 97, 235, 255), stop:0.895522 rgba(63, 195, 255, 255));
+border-color: rgb(216, 79, 213);</string>
     </property>
     <property name="text">
      <string>LeaderBoard</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_quit">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>370</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(76, 22, 184)</string>
+    </property>
+    <property name="text">
+     <string>Exit</string>
     </property>
    </widget>
   </widget>
@@ -132,7 +159,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.973, x2:0.915025, y2:0.0
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>789</width>
      <height>22</height>
     </rect>
    </property>

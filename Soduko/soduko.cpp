@@ -186,7 +186,7 @@ void soduko::fill_rand()
 	f_rand(random_numbers);
 
 	srand(time(0));
-	int rand1 = rand() % 8;
+	int rand1 = rand() % 9;
 
 	for (int i = 0; i < 9; i++)
 	{
@@ -194,12 +194,40 @@ void soduko::fill_rand()
 		inputs[i][places[i][rand1]]->setPlainText(QString::number(random_numbers[i]));
 		boxs[i][places[i][rand1]] = random_numbers[i];
 		inputs[i][places[i][rand1]]->setReadOnly(true);
-		if (i != 8)
+		if (i < 8 && rand1 < 8)
 		{
 			inputs[i+1][places[i+1][rand1+1]]->setTextColor("green");
 			inputs[i+1][places[i+1][rand1+1]]->setPlainText(QString::number(random_numbers[i]));
 			boxs[i+1][places[i+1][rand1+1]] = random_numbers[i];
 			inputs[i+1][places[i+1][rand1+1]]->setReadOnly(true);
+		}
+		if (i < 7 && rand1 < 7)
+		{
+			inputs[i+2][places[i+2][rand1+2]]->setTextColor("green");
+			inputs[i+2][places[i+2][rand1+2]]->setPlainText(QString::number(random_numbers[i]));
+			boxs[i+2][places[i+2][rand1+2]] = random_numbers[i];
+			inputs[i+2][places[i+2][rand1+2]]->setReadOnly(true);
+		}
+		if (i < 6 && rand1 < 6)
+		{
+			inputs[i+3][places[i+3][rand1+3]]->setTextColor("green");
+			inputs[i+3][places[i+3][rand1+3]]->setPlainText(QString::number(random_numbers[i]));
+			boxs[i+3][places[i+3][rand1+3]] = random_numbers[i];
+			inputs[i+3][places[i+3][rand1+3]]->setReadOnly(true);
+		}
+		if (i < 5 && rand1 < 5)
+		{
+			inputs[i+4][places[i+4][rand1+4]]->setTextColor("green");
+			inputs[i+4][places[i+4][rand1+4]]->setPlainText(QString::number(random_numbers[i]));
+			boxs[i+4][places[i+4][rand1+4]] = random_numbers[i];
+			inputs[i+4][places[i+4][rand1+4]]->setReadOnly(true);
+		}
+		if (i < 4 && rand1 < 4)
+		{
+			inputs[i+5][places[i+5][rand1+5]]->setTextColor("green");
+			inputs[i+5][places[i+5][rand1+5]]->setPlainText(QString::number(random_numbers[i]));
+			boxs[i+5][places[i+5][rand1+5]] = random_numbers[i];
+			inputs[i+5][places[i+5][rand1+5]]->setReadOnly(true);
 		}
 	}
 }
@@ -761,7 +789,7 @@ void soduko::on_btn_solve_clicked()
 	QVector<QString> names;
 	QVector<int> wins;
 
-	while (file.atEnd())
+	while (!in.atEnd())
 	{
 		line = in.readLine();
 		names.push_back(line.split(" ")[0]);
@@ -769,7 +797,12 @@ void soduko::on_btn_solve_clicked()
 	}
 
 	int index = names.indexOf(name);
-	wins[index]++;
+	if (index != -1) wins[index]++;
+	else
+	{
+		names.push_back(name);
+		wins.push_back(1);
+	}
 	for (int i = index; i > 0; i--)
 	{
 		if (wins[i] > wins[i-1])
@@ -781,6 +814,7 @@ void soduko::on_btn_solve_clicked()
 
 	file.remove();
 
+
 	if (!file.open(QFile::WriteOnly | QFile::Text))
 	{
 		QMessageBox::warning(this,"title","File Not Open");
@@ -790,17 +824,11 @@ void soduko::on_btn_solve_clicked()
 	QString txt = "";
 	for (int i = 0; i < names.size(); i++)
 	{
-		txt.append("/n");
-		txt.append(names[i]);
-		txt.append(" ");
-		txt.append(wins[i]);
+		out << names[i] << " " << wins[i] << endl;
 	}
-
-
 
 	file.flush();
 	file.close();
-
 
 
 	mb.setText("Yor Are Solve This Soduko !!!");
@@ -821,3 +849,16 @@ void soduko::on_btn_finish_clicked()
 	this->close();
 }
 
+
+void soduko::on_btn_restart_clicked()
+{
+	soduko * sodo = new soduko(nn);
+	sodo->show();
+	this->close();
+
+}
+
+void soduko::on_pushButton_clicked()
+{
+	this->close();
+}

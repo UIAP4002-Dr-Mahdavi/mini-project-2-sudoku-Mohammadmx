@@ -15,7 +15,7 @@ endgame::~endgame()
 	delete ui;
 }
 
-void endgame::on_btn_playagain_clicked()
+void endgame::on_btn_firstpage_clicked()
 {
 	MainWindow * mw = new MainWindow();
 	mw->show();
@@ -29,8 +29,7 @@ void endgame::on_btn_leaderboard_clicked()
 	this->close();
 }
 
-void endgame::on_btn_leavegame_clicked()
+void endgame::on_btn_exit_clicked()
 {
 	this->close();
-	return;
 }

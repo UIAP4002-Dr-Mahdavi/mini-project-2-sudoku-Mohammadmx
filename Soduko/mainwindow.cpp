@@ -44,3 +44,8 @@ void MainWindow::on_btn_leaderboard_clicked()
 	lb->show();
 	this->close();
 }
+
+void MainWindow::on_btn_quit_clicked()
+{
+	this->close();
+}

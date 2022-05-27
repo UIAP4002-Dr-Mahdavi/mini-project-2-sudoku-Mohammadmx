@@ -18,7 +18,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="btn_playagain">
+  <widget class="QPushButton" name="btn_firstpage">
    <property name="geometry">
     <rect>
      <x>530</x>
@@ -29,14 +29,32 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>16</pointsize>
+     <pointsize>18</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>Play Again</string>
+    <string>First Page</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_leavegame">
+  <widget class="QPushButton" name="btn_exit">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>330</y>
+     <width>241</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_leaderboard">
    <property name="geometry">
     <rect>
      <x>530</x>
@@ -45,21 +63,31 @@
      <height>91</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Leave Game</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_leaderboard">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>340</y>
-     <width>241</width>
-     <height>91</height>
-    </rect>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Leader Board</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>50</y>
+     <width>461</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
    </property>
   </widget>
  </widget>

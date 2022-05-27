@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
@@ -19,9 +20,10 @@ QT_BEGIN_NAMESPACE
 class Ui_endgame
 {
 public:
-    QPushButton *btn_playagain;
-    QPushButton *btn_leavegame;
+    QPushButton *btn_firstpage;
+    QPushButton *btn_exit;
     QPushButton *btn_leaderboard;
+    QLabel *label;
 
     void setupUi(QWidget *endgame)
     {
@@ -31,16 +33,26 @@ public:
         QFont font;
         font.setPointSize(16);
         endgame->setFont(font);
-        btn_playagain = new QPushButton(endgame);
-        btn_playagain->setObjectName(QString::fromUtf8("btn_playagain"));
-        btn_playagain->setGeometry(QRect(530, 40, 241, 91));
-        btn_playagain->setFont(font);
-        btn_leavegame = new QPushButton(endgame);
-        btn_leavegame->setObjectName(QString::fromUtf8("btn_leavegame"));
-        btn_leavegame->setGeometry(QRect(530, 190, 241, 91));
+        btn_firstpage = new QPushButton(endgame);
+        btn_firstpage->setObjectName(QString::fromUtf8("btn_firstpage"));
+        btn_firstpage->setGeometry(QRect(530, 40, 241, 91));
+        QFont font1;
+        font1.setPointSize(18);
+        btn_firstpage->setFont(font1);
+        btn_exit = new QPushButton(endgame);
+        btn_exit->setObjectName(QString::fromUtf8("btn_exit"));
+        btn_exit->setGeometry(QRect(530, 330, 241, 91));
+        btn_exit->setFont(font1);
         btn_leaderboard = new QPushButton(endgame);
         btn_leaderboard->setObjectName(QString::fromUtf8("btn_leaderboard"));
-        btn_leaderboard->setGeometry(QRect(530, 340, 241, 91));
+        btn_leaderboard->setGeometry(QRect(530, 190, 241, 91));
+        btn_leaderboard->setFont(font1);
+        label = new QLabel(endgame);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(30, 50, 461, 231));
+        QFont font2;
+        font2.setPointSize(20);
+        label->setFont(font2);
 
         retranslateUi(endgame);
 
@@ -50,9 +62,10 @@ public:
     void retranslateUi(QWidget *endgame)
     {
         endgame->setWindowTitle(QApplication::translate("endgame", "Form", nullptr));
-        btn_playagain->setText(QApplication::translate("endgame", "Play Again", nullptr));
-        btn_leavegame->setText(QApplication::translate("endgame", "Leave Game", nullptr));
+        btn_firstpage->setText(QApplication::translate("endgame", "First Page", nullptr));
+        btn_exit->setText(QApplication::translate("endgame", "Exit", nullptr));
         btn_leaderboard->setText(QApplication::translate("endgame", "Leader Board", nullptr));
+        label->setText(QApplication::translate("endgame", "TextLabel", nullptr));
     } // retranslateUi
 
 };

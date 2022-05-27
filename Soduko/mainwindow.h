@@ -20,6 +20,8 @@ private slots:
 
 	void on_btn_leaderboard_clicked();
 
+	void on_btn_quit_clicked();
+
 private:
 	Ui::MainWindow *ui;
 };

@@ -12,7 +12,7 @@ class soduko : public QWidget
 	Q_OBJECT
 
 public:
-	explicit soduko(QWidget *parent = nullptr);
+	explicit soduko(QString ,QWidget *parent = nullptr);
 	~soduko();
 
 private slots:

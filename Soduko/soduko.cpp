@@ -1,17 +1,27 @@
 #include "soduko.h"
 #include "ui_soduko.h"
 #include "endgame.h"
+#include "mainwindow.h"
 #include <QMessageBox>
 #include <stdlib.h>
 #include <time.h>
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
+#include <QVector>
+
+#define address "/home/mohmammad/Desktop/Term 2/MiniProject 2/mini-project-2-sudoku-Mohammadmx/Soduko/LeaderBoard.txt"
+
 
 void fill_rand();
-soduko::soduko(QWidget *parent) :
+QString nn;
+soduko::soduko(QString n, QWidget *parent) :
 	QWidget(parent),
 	ui(new Ui::soduko)
 {
 	ui->setupUi(this);
 	fill_rand();
+	nn = n;
 }
 
 soduko::~soduko()
@@ -22,6 +32,8 @@ soduko::~soduko()
 
 int boxs[9][9] = {};
 QString inp;
+
+
 
 void add_array(int w, int l)
 {
@@ -178,12 +190,16 @@ void soduko::fill_rand()
 
 	for (int i = 0; i < 9; i++)
 	{
+		inputs[i][places[i][rand1]]->setTextColor("green");
 		inputs[i][places[i][rand1]]->setPlainText(QString::number(random_numbers[i]));
 		boxs[i][places[i][rand1]] = random_numbers[i];
+		inputs[i][places[i][rand1]]->setReadOnly(true);
 		if (i != 8)
 		{
+			inputs[i+1][places[i+1][rand1+1]]->setTextColor("green");
 			inputs[i+1][places[i+1][rand1+1]]->setPlainText(QString::number(random_numbers[i]));
 			boxs[i+1][places[i+1][rand1+1]] = random_numbers[i];
+			inputs[i+1][places[i+1][rand1+1]]->setReadOnly(true);
 		}
 	}
 }
@@ -731,9 +747,70 @@ void soduko::on_btn_solve_clicked()
 		}
 	}
 
+
+	QFile file(address);
+
+	if (!file.open(QFile::ReadOnly | QFile::Text))
+	{
+		QMessageBox::warning(this,"title","File Not Open");
+		return;
+	}
+	QString name = nn;
+	QTextStream in(&file);
+	QString line;
+	QVector<QString> names;
+	QVector<int> wins;
+
+	while (file.atEnd())
+	{
+		line = in.readLine();
+		names.push_back(line.split(" ")[0]);
+		wins.push_back((line.split(" ")[1]).toInt());
+	}
+
+	int index = names.indexOf(name);
+	wins[index]++;
+	for (int i = index; i > 0; i--)
+	{
+		if (wins[i] > wins[i-1])
+		{
+			std::swap(wins[i],wins[i-1]);
+			std::swap(names[i],names[i-1]);
+		}
+	}
+
+	file.remove();
+
+	if (!file.open(QFile::WriteOnly | QFile::Text))
+	{
+		QMessageBox::warning(this,"title","File Not Open");
+	}
+
+	QTextStream out(&file);
+	QString txt = "";
+	for (int i = 0; i < names.size(); i++)
+	{
+		txt.append("/n");
+		txt.append(names[i]);
+		txt.append(" ");
+		txt.append(wins[i]);
+	}
+
+
+
+	file.flush();
+	file.close();
+
+
+
 	mb.setText("Yor Are Solve This Soduko !!!");
 	mb.setWindowTitle("Win");
 	mb.exec();
+
+	endgame * endg = new endgame();
+	endg->show();
+	this->close();
+
 }
 
 

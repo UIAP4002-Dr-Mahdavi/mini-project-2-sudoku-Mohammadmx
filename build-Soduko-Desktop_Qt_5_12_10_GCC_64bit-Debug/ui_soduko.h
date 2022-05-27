@@ -115,6 +115,7 @@ public:
     QTextEdit *inp1_4;
     QPushButton *btn_solve;
     QPushButton *btn_finish;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *soduko)
     {
@@ -795,6 +796,9 @@ public:
         btn_finish->setGeometry(QRect(600, 399, 171, 71));
         btn_finish->setFont(font1);
         btn_finish->setStyleSheet(QString::fromUtf8("background-color:rgb(239, 41, 41)"));
+        pushButton = new QPushButton(soduko);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(600, 290, 151, 61));
 
         retranslateUi(soduko);
 
@@ -811,6 +815,7 @@ public:
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         btn_solve->setText(QApplication::translate("soduko", "solve", nullptr));
         btn_finish->setText(QApplication::translate("soduko", "Finish", nullptr));
+        pushButton->setText(QApplication::translate("soduko", "ReStart", nullptr));
     } // retranslateUi
 
 };

@@ -16,11 +16,11 @@ MainWindow::~MainWindow()
 	delete ui;
 }
 
-
+QString name;
 void MainWindow::on_btn_login_clicked()
 {
-	QString name = this->ui->enter_name->text();
-	if (name.isEmpty())
+	name = this->ui->enter_name->text();
+	if ((name).isEmpty())
 	{
 		QMessageBox mbox;
 		mbox.setText("Field Enter Name Is Empty");
@@ -32,9 +32,9 @@ void MainWindow::on_btn_login_clicked()
 	}
 	else
 	{
-		soduko * sdk = new soduko();
+		soduko * sdk = new soduko(name);
 		sdk->show();
-		this->close();
+		this->hide();
 	}
 }
 

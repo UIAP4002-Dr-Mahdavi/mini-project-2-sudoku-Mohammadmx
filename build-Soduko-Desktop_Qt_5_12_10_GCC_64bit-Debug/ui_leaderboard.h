@@ -28,6 +28,7 @@ public:
     QPushButton *btn_firstpage;
     QPushButton *pushButton_3;
     QPlainTextEdit *lb_wins;
+    QPushButton *btn_edit;
 
     void setupUi(QWidget *leaderBoard)
     {
@@ -68,6 +69,9 @@ public:
         lb_wins->setObjectName(QString::fromUtf8("lb_wins"));
         lb_wins->setGeometry(QRect(490, 80, 104, 531));
         lb_wins->setFont(font);
+        btn_edit = new QPushButton(leaderBoard);
+        btn_edit->setObjectName(QString::fromUtf8("btn_edit"));
+        btn_edit->setGeometry(QRect(650, 380, 121, 61));
 
         retranslateUi(leaderBoard);
 
@@ -82,6 +86,7 @@ public:
         btn_show->setText(QApplication::translate("leaderBoard", "Show", nullptr));
         btn_firstpage->setText(QApplication::translate("leaderBoard", "First Page", nullptr));
         pushButton_3->setText(QApplication::translate("leaderBoard", "Leave Game", nullptr));
+        btn_edit->setText(QApplication::translate("leaderBoard", "Edit", nullptr));
     } // retranslateUi
 
 };

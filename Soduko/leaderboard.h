@@ -18,6 +18,8 @@ public:
 private slots:
 	void on_btn_show_clicked();
 
+	void on_btn_edit_clicked();
+
 private:
 	Ui::leaderBoard *ui;
 };

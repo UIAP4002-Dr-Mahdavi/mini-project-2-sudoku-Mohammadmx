@@ -14,6 +14,8 @@ leaderBoard::leaderBoard(QWidget *parent) :
 	ui(new Ui::leaderBoard)
 {
 	ui->setupUi(this);
+	this->ui->lb_names->setReadOnly(true);
+	this->ui->lb_wins->setReadOnly(true);
 }
 
 leaderBoard::~leaderBoard()
@@ -44,6 +46,9 @@ void leaderBoard::on_btn_show_clicked()
 		wins.push_back((line.split(" ")[1]).toInt());
 	}
 
+
+	this->ui->lb_names->clear();
+	this->ui->lb_wins->clear();
 	for (int i = 0; i < users.size(); i++)
 	{
 		this->ui->lb_names->appendPlainText(QString::number(i+1));
@@ -55,6 +60,13 @@ void leaderBoard::on_btn_show_clicked()
 		this->ui->lb_names->insertPlainText(users[i]);
 		this->ui->lb_wins->appendPlainText(QString::number(wins[i]));
 	}
+	this->ui->lb_names->setReadOnly(true);
+	this->ui->lb_wins->setReadOnly(true);
 
 	file.close();
+}
+
+void leaderBoard::on_btn_edit_clicked()
+{
+
 }

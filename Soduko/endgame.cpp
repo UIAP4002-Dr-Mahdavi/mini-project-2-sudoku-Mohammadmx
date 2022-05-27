@@ -1,7 +1,7 @@
 #include "endgame.h"
 #include "ui_endgame.h"
 #include "leaderboard.h"
-#include "soduko.h"
+#include "mainwindow.h"
 
 endgame::endgame(QWidget *parent) :
 	QWidget(parent),
@@ -17,8 +17,8 @@ endgame::~endgame()
 
 void endgame::on_btn_playagain_clicked()
 {
-	soduko * sdk = new soduko();
-	sdk->show();
+	MainWindow * mw = new MainWindow();
+	mw->show();
 	this->close();
 }
 
